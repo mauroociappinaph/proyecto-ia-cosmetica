@@ -8,6 +8,11 @@
 🤖 **Asistente de inventario con inteligencia artificial orientado a tiendas de cosméticos y perfumerías.**
 Permite consultar stock, analizar ventas y recibir recomendaciones automáticas de reposición a través de una interfaz tipo chat + dashboard, usando un stack moderno (Node.js, TypeScript, Prisma, LLM open‑source y MCP).
 
+## 📊 Estado del Proyecto
+
+- ✅ **Documentación completa** - Arquitectura, features, instalación, roadmap
+- 🚧 **Implementación en desarrollo** - Backend, MCP, integración Mistral API, UI
+
 Este proyecto está pensado como **prototipo de portfolio** para mostrar habilidades de:
 - 🧠 IA aplicada a un caso real de negocio
 - ⚙️ Backend moderno + base de datos + lógica de negocio
@@ -351,7 +356,7 @@ DATABASE_URL="file:./dev.db"
 
 # API de Mistral AI
 MISTRAL_API_KEY="tu-api-key-aqui"
-MISTRAL_MODEL="mistral-medium"
+MISTRAL_MODEL="mistral-medium-latest"
 
 # Puerto del servidor backend/MCP
 PORT=4000

@@ -1,5 +1,7 @@
 ## 🚀 Instalación y configuración
 
+> **Estado del proyecto**: Documentación completa. Implementación en desarrollo.
+
 > Nota: Los nombres de carpetas/scripts son orientativos. Ajusta según tu implementación real.
 
 ### 9.1 Requisitos previos
@@ -22,6 +24,8 @@ cd proyecto-ia-cosmetica
 Obtén tu API key desde [Mistral AI](https://mistral.ai/).
 Configura la variable de entorno con tu API key.
 
+> **Nota de seguridad**: El archivo `.env` no se commitea al repositorio (está en `.gitignore`). Usa `.env.example` como plantilla.
+
 ### 9.4 Backend / MCP
 
 ```bash
@@ -38,7 +42,7 @@ DATABASE_URL="file:./dev.db"
 
 # API de Mistral AI
 MISTRAL_API_KEY="tu-api-key-aqui"
-MISTRAL_MODEL="mistral-medium"
+MISTRAL_MODEL="mistral-medium-latest"
 
 # Puerto del servidor backend/MCP
 PORT=4000

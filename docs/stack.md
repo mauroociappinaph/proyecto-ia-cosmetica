@@ -23,5 +23,5 @@
 ### ❓ Por qué este stack
 - 🎯 **Stack conocido** por recruiters (Node, TS, Prisma, React)
 - 🔗 **Uso de MCP** para mostrar orquestación de tools por IA (tendencia actual)
-- 💰 **API de Mistral AI** → modelos potentes con política de precios transparente
+- 💰 **API de Mistral AI** (requiere API key; sujeto a límites/costos según plan)
 - 🚀 **Next.js** → facilita una UI clara para perfiles no técnicos
