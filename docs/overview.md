@@ -1,7 +1,7 @@
 ## 📖 Descripción general
 
 ### 🚨 Problema
-Pequeñas y medianas tiendas de cosmética suelen gestionar su inventario con **Excel** o sistemas básicos. Esto implica:
+Pequeñas y medianas tiendas de cosmética, principalmente tiendas físicas independientes o pequeñas cadenas, suelen gestionar su inventario con **Excel** o sistemas básicos. Esto implica:
 - 📊 Revisión manual de stock y ventas
 - ⚠️ Quiebres de stock en productos clave
 - 📦 Sobrestock en productos de baja rotación
@@ -19,6 +19,8 @@ Un **asistente de inventario con IA** que:
   - Identificar sobrestock / productos estancados
   - Resaltar productos estratégicos
 - 🗣️ Devuelve respuestas explicadas, no solo números
+
+> **A diferencia de un dashboard tradicional**, el asistente permite hacer preguntas en lenguaje natural y devuelve recomendaciones explicadas, no solo tablas de datos.
 
 ### 🎯 Objetivo de portfolio
 Demostrar la capacidad de:
