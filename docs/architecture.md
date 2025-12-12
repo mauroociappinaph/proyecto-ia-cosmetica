@@ -12,7 +12,7 @@
 - **Node.js + TypeScript** - Backend robusto y tipado
 - **ORM Prisma** - Manejo de base de datos
 - **Base de datos**: SQLite (desarrollo) / PostgreSQL (producción opcional)
-- **Tools MCP expuestas**:
+- **Servidor MCP integrado en el backend**, que expone tools como:
   - 🔍 Consultar stock
   - 📋 Generar reportes (bajo stock, sobrestock, productos estratégicos)
   - 📈 Consultar tendencias de ventas
@@ -28,8 +28,8 @@
 1. 👤 **Usuario** escribe en el chat (UI)
 2. 🌐 **Frontend** envía consulta al backend (`/api/chat`)
 3. 🖥️ **Backend**:
-   - Llama al modelo de IA con historial de conversación
-   - Modelo decide tools MCP (ej. `getLowStockReport`)
+   - Llama al modelo de IA con el historial de conversación
+   - El modelo decide qué tools MCP llamar (ej. `getLowStockReport`)
 4. 🔧 **Servidor MCP** ejecuta tool:
    - Consulta BD vía Prisma
    - Devuelve datos JSON al modelo
