@@ -4,16 +4,16 @@
 
 #### 🎨 Frontend (UI)
 - **Next.js (React)** - Framework moderno para React
-- **Zustand** - Estado global ligero y reactivo
-- **Patrones**: SRP, DRY, barrel exports
+- **Zustand** - Librería para manejo de estado global (planeada para implementación)
+- **Patrones**: SRP, DRY, barrel exports (diseñados para implementación)
 - **Pantallas principales**:
   - 💬 Chat con el asistente
   - 📊 Dashboard de inventario (lista, estado, alertas, gráficos simples)
 
-**Manejo de Estado (Zustand):**
-- **Chat Store**: Mensajes, historial, estados de carga, conexiones WebSocket
-- **Inventory Store**: Lista de productos, filtros aplicados, producto seleccionado, cache
-- **UI Store**: Tema, modales, notificaciones, estados de carga globales
+**Diseño de Manejo de Estado (Zustand):**
+- **Chat Store**: Gestionará mensajes, historial, estados de carga, conexiones WebSocket
+- **Inventory Store**: Gestionará lista de productos, filtros aplicados, producto seleccionado, cache
+- **UI Store**: Gestionará tema, modales, notificaciones, estados de carga globales
 
 #### ⚙️ Backend / Servidor MCP
 - **Node.js + TypeScript** - Backend robusto y tipado

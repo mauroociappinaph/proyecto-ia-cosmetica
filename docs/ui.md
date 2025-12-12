@@ -1,25 +1,27 @@
 ## 🖥️ Interfaz de usuario (UI)
 
+> **Estado**: Diseño completo, implementación pendiente.
+
 > Nota: El layout (chat a la derecha y dashboard a la izquierda) es una referencia visual. En la implementación real puede adaptarse a pestañas o diseño responsive según el tamaño de pantalla.
 
-### Estado de la UI (Zustand)
+### Diseño de Estado de la UI (Zustand)
 
-La interfaz utiliza Zustand para manejar el estado global de manera eficiente:
+El diseño contempla Zustand para manejar el estado global de manera eficiente:
 
-**Chat Store:**
+**Chat Store (diseñado para implementación):**
 - `messages`: Array de mensajes (usuario/IA)
 - `isTyping`: Estado de carga durante respuestas
 - `chatHistory`: Historial persistente en localStorage
 - `connectionStatus`: Estado de conexión con backend
 
-**Inventory Store:**
+**Inventory Store (diseñado para implementación):**
 - `products`: Lista completa de productos
 - `filteredProducts`: Productos después de aplicar filtros
 - `selectedProduct`: Producto actualmente seleccionado
 - `filters`: Objeto con filtros aplicados (categoría, stock, marca)
 - `loading`: Estado de carga de datos
 
-**UI Store:**
+**UI Store (diseñado para implementación):**
 - `theme`: Tema claro/oscuro
 - `sidebarOpen`: Estado del sidebar en móvil
 - `notifications`: Array de notificaciones toast
