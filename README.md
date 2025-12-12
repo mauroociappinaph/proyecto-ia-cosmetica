@@ -16,20 +16,20 @@ Este proyecto está pensado como **prototipo de portfolio** para mostrar habilid
 
 ## 📋 Índice
 
-- [📖 Descripción general](#-descripción-general)
-- [✨ Características principales](#-características-principales)
-- [🏗️ Arquitectura de alto nivel](#️-arquitectura-de-alto-nivel)
-- [🛠️ Stack tecnológico](#️-stack-tecnológico)
-- [🗄️ Modelo de datos](#️-modelo-de-datos)
-- [🧮 Lógica de negocio y reasoning de la IA](#-lógica-de-negocio-y-reasoning-de-la-ia)
-- [🤖 IA y orquestación con MCP](#-ia-y-orquestación-con-mcp)
-- [🖥️ Interfaz de usuario (UI)](#️-interfaz-de-usuario-ui)
-- [🚀 Instalación y configuración](#-instalación-y-configuración)
-- [💬 Uso y ejemplos de consultas](#-uso-y-ejemplos-de-consultas)
-- [⚠️ Limitaciones actuales](#️-limitaciones-actuales)
-- [🔮 Roadmap y visión futura](#-roadmap-y-visión-futura)
-- [📁 Estructura del repositorio](#-estructura-del-repositorio)
-- [📜 Licencia](#-licencia)
+- [📖 Descripción general](#descripción-general)
+- [✨ Características principales](#características-principales)
+- [🏗️ Arquitectura de alto nivel](#arquitectura-de-alto-nivel)
+- [🛠️ Stack tecnológico](#stack-tecnológico)
+- [🗄️ Modelo de datos](#modelo-de-datos)
+- [🧮 Lógica de negocio y reasoning de la IA](#lógica-de-negocio-y-reasoning-de-la-ia)
+- [🤖 IA y orquestación con MCP](#ia-y-orquestación-con-mcp)
+- [🖥️ Interfaz de usuario (UI)](#interfaz-de-usuario-ui)
+- [🚀 Instalación y configuración](#instalación-y-configuración)
+- [💬 Uso y ejemplos de consultas](#uso-y-ejemplos-de-consultas)
+- [⚠️ Limitaciones actuales](#limitaciones-actuales)
+- [🔮 Roadmap y visión futura](#roadmap-y-visión-futura)
+- [📁 Estructura del repositorio](#estructura-del-repositorio)
+- [📜 Licencia](#licencia)
 ## 📖 Descripción general
 
 ### 🚨 Problema
@@ -149,72 +149,82 @@ Demostrar la capacidad de:
 - 🔗 **Uso de MCP** para mostrar orquestación de tools por IA (tendencia actual)
 - 💰 **Modelos open‑source** → demo totalmente local y gratuita
 - 🚀 **Next.js** → facilita una UI clara para perfiles no técnicos
-5. Modelo de datos
-Para el MVP se utiliza una tabla principal Product.
-Se pueden añadir más tablas (por ejemplo, Sales) en futuras versiones.
+## 🗄️ Modelo de datos
 
-5.1 Tabla Product
+Para el MVP se utiliza una tabla principal `Product`.
+Se pueden añadir más tablas (por ejemplo, `Sales`) en futuras versiones.
+
+### 5.1 Tabla `Product`
+
 Campos sugeridos:
 
-Campo	Tipo	Descripción
-id	string/int	Identificador único
-sku	string	Código interno del producto
-name	string	Nombre del producto
-brand	string	Marca
-category	string	Categoría (serum, crema, maquillaje, etc.)
-supplier	string	Proveedor principal
-stock	int	Stock actual en tienda
-stock_in_transit	int	Stock en tránsito / pedido en curso (opcional)
-sales_last_7	int	Unidades vendidas en los últimos 7 días
-sales_last_30	int	Unidades vendidas en los últimos 30 días
-last_restock_date	date	Fecha de última reposición
-cost_price	float	Costo unitario
-sale_price	float	Precio de venta
-margin	float	Margen estimado (puede ser calculado)
-threshold	int	Umbral de alerta de bajo stock
-is_strategic	boolean	Marca productos estratégicos (alto margen/alto volumen)
-Nota: la implementación concreta puede variar (por ejemplo, margin calculado en consultas en vez de almacenado).
+| Campo              | Tipo      | Descripción |
+|--------------------|-----------|-------------|
+| `id`               | string/int | Identificador único |
+| `sku`              | string    | Código interno del producto |
+| `name`             | string    | Nombre del producto |
+| `brand`            | string    | Marca |
+| `category`         | string    | Categoría (serum, crema, maquillaje, etc.) |
+| `supplier`         | string    | Proveedor principal |
+| `stock`            | int       | Stock actual en tienda |
+| `stock_in_transit` | int       | Stock en tránsito / pedido en curso (opcional) |
+| `sales_last_7`     | int       | Unidades vendidas en los últimos 7 días |
+| `sales_last_30`    | int       | Unidades vendidas en los últimos 30 días |
+| `last_restock_date`| date      | Fecha de última reposición |
+| `cost_price`       | float     | Costo unitario |
+| `sale_price`       | float     | Precio de venta |
+| `margin`           | float     | Margen estimado (puede ser calculado) |
+| `threshold`        | int       | Umbral de alerta de bajo stock |
+| `is_strategic`     | boolean   | Marca productos estratégicos (alto margen/alto volumen) |
 
-6. Lógica de negocio y reasoning de la IA
-6.1 Reglas básicas de reposición (MVP)
+> **Nota**: La implementación concreta puede variar (por ejemplo, `margin` calculado en consultas en vez de almacenado).
+
+## 🧮 Lógica de negocio y reasoning de la IA
+
+### 6.1 Reglas básicas de reposición (MVP)
+
 Ejemplo de reglas simples:
 
-Promedio de ventas 7 días
-txt
-
+**Promedio de ventas 7 días**
+```txt
 promedio_diario_7d = sales_last_7 / 7
-Proyección a 7 días
-txt
+```
 
+**Proyección a 7 días**
+```txt
 proyección_7d = promedio_diario_7d * 7
-Detección de riesgo de quiebre
-txt
+```
 
+**Detección de riesgo de quiebre**
+```txt
 Si stock_actual < proyección_7d
   → producto en riesgo de quiebre en la próxima semana
-Cantidad sugerida de reposición
-txt
+```
 
+**Cantidad sugerida de reposición**
+```txt
 cantidad_sugerida = max((proyección_7d * 2) - stock_actual, 0)
+```
+
 La idea es cubrir, por ejemplo, dos semanas de ventas basadas en la última semana.
 
-6.2 Sobreestock / productos estancados
+### 6.2 Sobreestock / productos estancados
+
 Se consideran productos en sobrestock / estancados aquellos con:
+- Stock alto (por encima de cierto umbral relativo al promedio de ventas)
+- `sales_last_30` bajas o cero
 
-stock alto (por encima de cierto umbral relativo al promedio de ventas).
-sales_last_30 bajas o cero.
-Regla simple:
-
-txt
-
+**Regla simple:**
+```txt
 Si stock_actual > (promedio_diario_30d * 45 días)
   Y sales_last_30 es baja
   → producto potencialmente estancado/sobrestock
-La IA puede sugerir:
+```
 
-descuentos,
-bundles,
-campañas promocionales.
+La IA puede sugerir:
+- Descuentos
+- Bundles
+- Campañas promocionales
 6.3 Productos estratégicos
 Productos marcados con is_strategic = true:
 
@@ -487,9 +497,7 @@ Bash
 │
 ├── README.md
 └── package.json (root, opcional)
-14. Licencia
-Define aquí la licencia que desees usar, por ejemplo:
+## 📜 Licencia
 
-text
-
-MIT License
+Este proyecto está licenciado bajo la **licencia MIT**.
+Consulta el archivo [`LICENSE`](LICENSE) para más detalles.
