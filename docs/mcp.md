@@ -25,9 +25,13 @@ Implementadas en el servidor MCP:
 - `getStrategicProductsStatus()`
   Lista productos con `is_strategic = true` y su nivel de riesgo
 
+> En esta versión del proyecto, todas las tools MCP son de solo lectura sobre la base de datos; el asistente no ejecuta cambios directos en inventario ni genera órdenes reales.
+
 ### 7.2 Asistente de IA (agente principal)
 
 **Rol**: Asistente de inventario para tiendas de cosmética.
+
+El asistente utiliza estas tools MCP de forma automática según la intención del usuario (por ejemplo, usa `getLowStockReport` cuando el usuario pregunta "¿qué productos están por agotarse?").
 
 **Responsabilidades**:
 - Entender la intención del usuario
