@@ -3,13 +3,13 @@
 Para el MVP se utiliza una tabla principal `Product`.
 Se pueden añadir más tablas (por ejemplo, `Sales`) en futuras versiones.
 
-### 5.1 Tabla `Product`
+### Tabla `Product`
 
 Campos sugeridos:
 
 | Campo              | Tipo      | Descripción |
 |--------------------|-----------|-------------|
-| `id`               | string/int | Identificador único |
+| `id`               | int       | Identificador único (autoincremental) |
 | `sku`              | string    | Código interno del producto |
 | `name`             | string    | Nombre del producto |
 | `brand`            | string    | Marca |
