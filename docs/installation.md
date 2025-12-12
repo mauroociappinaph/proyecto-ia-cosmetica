@@ -13,8 +13,8 @@
 ### 9.2 Clonar repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/asistente-inventario-ia-cosmeticos.git
-cd asistente-inventario-ia-cosmeticos
+git clone https://github.com/mauroociappinaph/proyecto-ia-cosmetica.git
+cd proyecto-ia-cosmetica
 ```
 
 ### 9.3 Configurar modelo de IA (Ollama)
