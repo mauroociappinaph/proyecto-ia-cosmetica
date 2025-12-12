@@ -38,8 +38,7 @@ DATABASE_URL="file:./dev.db"
 
 # API de Mistral AI
 MISTRAL_API_KEY="tu-api-key-aqui"
-LLM_PROVIDER="mistral"
-LLM_MODEL="mistral-medium"
+MISTRAL_MODEL="mistral-medium"
 
 # Puerto del servidor backend/MCP
 PORT=4000

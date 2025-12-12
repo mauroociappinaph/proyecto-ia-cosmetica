@@ -144,7 +144,7 @@ Demostrar la capacidad de:
 ### ❓ Por qué este stack
 - 🎯 **Stack conocido** por recruiters (Node, TS, Prisma, React)
 - 🔗 **Uso de MCP** para mostrar orquestación de tools por IA (tendencia actual)
-- 💰 **Modelos open‑source** → demo totalmente local y gratuita
+- 💰 **API de Mistral AI** → modelos potentes con política de precios transparente
 - 🚀 **Next.js** → facilita una UI clara para perfiles no técnicos
 ## 🗄️ Modelo de datos
 
@@ -351,8 +351,7 @@ DATABASE_URL="file:./dev.db"
 
 # API de Mistral AI
 MISTRAL_API_KEY="tu-api-key-aqui"
-LLM_PROVIDER="mistral"
-LLM_MODEL="mistral-medium"
+MISTRAL_MODEL="mistral-medium"
 
 # Puerto del servidor backend/MCP
 PORT=4000
