@@ -15,6 +15,10 @@
 - ⭐ Ver estado de productos estratégicos
 
 ### 🗣️ Explicaciones de la IA
-- Justifica por qué recomienda reponer, pausar compras o revisar un producto
-- **Modelo de datos realista**: incluye precio, proveedor, fecha de última reposición, margen básico, etc.
-- 🤖 **IA local (por defecto)**: Uso de modelos open‑source (ej. Mistral) vía Ollama o LM Studio, sin coste por uso
+- Justifica por qué recomienda reponer, pausar compras o revisar un producto, en base a stock, ventas recientes y umbrales
+
+### 🗄️ Modelo de datos
+- Modelo de datos realista: incluye precio, proveedor, fecha de última reposición, margen básico, etc.
+
+### 🤖 IA local
+- IA local (por defecto): uso de modelos open‑source (ej. Mistral) vía Ollama o LM Studio, sin coste por uso
