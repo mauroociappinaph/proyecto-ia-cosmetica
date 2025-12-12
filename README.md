@@ -67,32 +67,36 @@ Demostrar la capacidad de:
 
 ## 🚀 Quick Demo (cuando esté implementado)
 
-> **Nota**: Esta sección muestra cómo se verá la aplicación una vez implementada. Actualmente es documentación conceptual.
+> **Estado**: Documentación completa. Implementación pendiente.
 
-### 📱 Interfaz de Usuario
+Esta sección muestra cómo funcionará la aplicación una vez implementada:
+
+### 📱 Interfaz Principal
 ```
-┌─────────────────────────────────────────────────┐
-│              💄 Inventario IA                    │
-├─────────────────┬───────────────────────────────┤
-│ 📊 Dashboard   │ 💬 Chat con Asistente          │
-│                 │                               │
+┌─────────────────┬───────────────────────────────┐
+│ 📊 Dashboard   │ 💬 Chat con IA                 │
+├─────────────────┼───────────────────────────────┤
 │ 🟢 Serum X      │ Usuario: ¿Qué reponer?        │
 │ 🟡 Crema Y      │                               │
 │ 🔴 Labial Z     │ IA: Esta semana conviene      │
-│                 │ reponer 15 unidades del Serum │
-│ 📈 Top Ventas   │ X. Stock actual: 8 unidades.  │
-│ 1. Serum X      │ Ventas promedio: 5/día.      │
-│ 2. Crema Y      │ [TODO: Implementar chat]      │
-│ 3. Labial Z     │                               │
+│ 📈 Top Ventas   │ reponer 15 unidades del Serum │
+│ 1. Serum X      │ X. Stock actual: 8 unidades.  │
+│ 2. Crema Y      │                               │
 └─────────────────┴───────────────────────────────┘
 ```
 
-### 🔄 Flujo de Ejecución
-1. **[TODO: Frontend]** Usuario escribe consulta en chat
-2. **[TODO: Backend]** API recibe mensaje y llama a Mistral AI
-3. **[TODO: MCP Tools]** IA ejecuta consultas a base de datos
-4. **[TODO: Lógica]** Aplica reglas de negocio y proyecciones
-5. **[TODO: Respuesta]** Devuelve recomendaciones explicadas
+### 🔄 Funcionalidades Clave
+- **Chat conversacional**: Consultas en lenguaje natural
+- **Dashboard visual**: Alertas de stock, tendencias, productos estratégicos
+- **Recomendaciones inteligentes**: Basadas en ventas y proyección de demanda
+
+### 📋 Checklist de Implementación
+- [ ] Backend + Prisma + base de datos
+- [ ] MCP Tools para consultas de inventario
+- [ ] Integración con API de Mistral AI
+- [ ] UI Chat con historial de conversación
+- [ ] Dashboard con gráficos y alertas
+- [ ] Lógica de negocio y reglas de reposición
 
 ## 🏗️ Diagrama de Arquitectura
 
