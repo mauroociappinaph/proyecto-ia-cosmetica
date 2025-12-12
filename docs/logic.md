@@ -33,12 +33,19 @@ Se consideran productos en sobrestock / estancados aquellos con:
 - Stock alto (por encima de cierto umbral relativo al promedio de ventas)
 - `sales_last_30` bajas o cero
 
+**Promedio de ventas 30 días**
+```txt
+promedio_diario_30d = sales_last_30 / 30
+```
+
 **Regla simple:**
 ```txt
-Si stock_actual > (promedio_diario_30d * 45 días)
+Si stock_actual > (promedio_diario_30d * 45)
   Y sales_last_30 es baja
   → producto potencialmente estancado/sobrestock
 ```
+
+(45 días ≈ horizonte de stock máximo deseado)
 
 La IA puede sugerir:
 - Descuentos
@@ -63,18 +70,17 @@ Pregunta del usuario:
 
 Pasos internos del asistente:
 
-Llama a la tool `getLowStockReport()` para obtener productos por debajo de cierto umbral de seguridad.
-Para cada producto del reporte:
-- Calcula `promedio_diario_7d = sales_last_7 / 7`
-- Calcula `proyección_7d = promedio_diario_7d * 7`
-- Compara `proyección_7d` vs `stock`
-- Verifica si `is_strategic = true`
-- Marca como críticos los productos:
-  - Cuyo stock no alcanza para la proyección de 7 días, y/o
-  - Que son estratégicos y tienen margen alto
-- Calcula `cantidad_sugerida` con la fórmula anterior
-
-Genera una respuesta en lenguaje natural, por ejemplo:
+1. Llama a la tool `getLowStockReport()` para obtener productos por debajo de cierto umbral de seguridad.
+2. Para cada producto del reporte:
+   - Calcula `promedio_diario_7d = sales_last_7 / 7`
+   - Calcula `proyección_7d = promedio_diario_7d * 7`
+   - Compara `proyección_7d` vs `stock`
+   - Verifica si `is_strategic = true`
+3. Marca como críticos los productos:
+   - Cuyo stock no alcanza para la proyección de 7 días, y/o
+   - Que son estratégicos y tienen margen alto.
+4. Calcula `cantidad_sugerida` con la fórmula anterior.
+5. Genera una respuesta en lenguaje natural, por ejemplo:
 
 > "Esta semana te conviene reponer:
 > 20 unidades del Serum Antioxidante X: vendiste unas 5 por día en la última semana y solo tenés 10 en stock; en menos de 3 días te quedarías sin unidades. Es un producto estratégico con buen margen.
