@@ -19,28 +19,30 @@
 │   └── .env.example
 │
 ├── frontend/
-│   ├── app/ o src/
-│   │   ├── pages/ o app/
-│   │   │   ├── index.tsx       # Dashboard + chat
-│   │   │   └── api/ (si se usa Next API)
-│   │   ├── components/
-│   │   │   ├── Chat.tsx
-│   │   │   └── InventoryTable.tsx
-│   │   └── lib/
+│   ├── app/
+│   │   ├── page.tsx            # Dashboard + chat
+│   │   └── api/                # (opcional) rutas API de Next
+│   ├── components/
+│   │   ├── Chat.tsx
+│   │   └── InventoryTable.tsx
+│   ├── lib/
 │   ├── package.json
 │   └── .env.example
 │
-├── docs/                       # Documentación detallada
+├── docs/                       # Documentación detallada (nombres orientativos)
+│   ├── overview.md
 │   ├── architecture.md
 │   ├── features.md
-│   ├── installation.md
-│   ├── limitations.md
-│   ├── model.md
-│   ├── roadmap.md
 │   ├── stack.md
-│   ├── structure.md
+│   ├── model.md
+│   ├── logic.md
+│   ├── mcp.md
 │   ├── ui.md
-│   └── usage.md
+│   ├── installation.md
+│   ├── usage.md
+│   ├── limitations.md
+│   ├── roadmap.md
+│   └── structure.md
 │
 ├── README.md
 ├── LICENSE
