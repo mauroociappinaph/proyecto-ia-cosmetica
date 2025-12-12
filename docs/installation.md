@@ -55,15 +55,13 @@ OLLAMA_HOST="http://localhost:11434"
 PORT=4000
 ```
 
-Migraciones y seed:
-
+**Migraciones y seed:**
 ```bash
 npx prisma migrate dev
 npx prisma db seed   # si tienes script de seed configurado
 ```
 
-Ejecutar backend:
-
+**Ejecutar backend:**
 ```bash
 npm run dev
 ```
@@ -84,8 +82,7 @@ En `.env` (frontend):
 NEXT_PUBLIC_API_URL="http://localhost:4000"
 ```
 
-Ejecutar frontend:
-
+**Ejecutar frontend:**
 ```bash
 npm run dev
 ```
