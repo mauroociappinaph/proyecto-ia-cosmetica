@@ -22,6 +22,8 @@ Este proyecto está pensado como **prototipo de portfolio** para mostrar habilid
 ## 📋 Índice
 
 - [📖 Descripción general](#descripción-general)
+- [🚀 Quick Demo (cuando esté implementado)](#quick-demo-cuando-esté-implementado)
+- [🏗️ Diagrama de Arquitectura](#diagrama-de-arquitectura)
 - [✨ Características principales](#características-principales)
 - [🏗️ Arquitectura de alto nivel](#arquitectura-de-alto-nivel)
 - [🛠️ Stack tecnológico](#stack-tecnológico)
@@ -62,6 +64,67 @@ Demostrar la capacidad de:
 - 🏗️ Diseñar y construir un **sistema end‑to‑end**: IA + backend + BD + UI
 - 🤖 Aplicar razonamiento con IA sobre datos reales
 - 💼 Pensar en términos de producto y no solo de código
+
+## 🚀 Quick Demo (cuando esté implementado)
+
+> **Nota**: Esta sección muestra cómo se verá la aplicación una vez implementada. Actualmente es documentación conceptual.
+
+### 📱 Interfaz de Usuario
+```
+┌─────────────────────────────────────────────────┐
+│              💄 Inventario IA                    │
+├─────────────────┬───────────────────────────────┤
+│ 📊 Dashboard   │ 💬 Chat con Asistente          │
+│                 │                               │
+│ 🟢 Serum X      │ Usuario: ¿Qué reponer?        │
+│ 🟡 Crema Y      │                               │
+│ 🔴 Labial Z     │ IA: Esta semana conviene      │
+│                 │ reponer 15 unidades del Serum │
+│ 📈 Top Ventas   │ X. Stock actual: 8 unidades.  │
+│ 1. Serum X      │ Ventas promedio: 5/día.      │
+│ 2. Crema Y      │ [TODO: Implementar chat]      │
+│ 3. Labial Z     │                               │
+└─────────────────┴───────────────────────────────┘
+```
+
+### 🔄 Flujo de Ejecución
+1. **[TODO: Frontend]** Usuario escribe consulta en chat
+2. **[TODO: Backend]** API recibe mensaje y llama a Mistral AI
+3. **[TODO: MCP Tools]** IA ejecuta consultas a base de datos
+4. **[TODO: Lógica]** Aplica reglas de negocio y proyecciones
+5. **[TODO: Respuesta]** Devuelve recomendaciones explicadas
+
+## 🏗️ Diagrama de Arquitectura
+
+```mermaid
+graph TB
+    A[👤 Usuario] --> B[🎨 Frontend<br/>Next.js + React]
+    B --> C[⚙️ Backend<br/>Node.js + TS]
+
+    C --> D[🤖 Mistral AI<br/>API]
+    C --> E[🗄️ Base de Datos<br/>SQLite/PostgreSQL]
+
+    D --> F[MCP Tools]
+    F --> E
+
+    C --> B
+    E --> F
+
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#f1f8e9
+```
+
+**Componentes principales:**
+- **Frontend**: UI intuitiva con chat + dashboard visual
+- **Backend**: API REST con integración MCP
+- **IA**: Mistral AI para procesamiento de lenguaje natural
+- **Base de Datos**: Inventario y ventas históricas
+- **MCP Tools**: Puente entre IA y datos de negocio
+
 ## ✨ Características principales
 
 - 💬 **Chat con IA** para consultas en lenguaje natural
