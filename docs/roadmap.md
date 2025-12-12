@@ -2,10 +2,13 @@
 
 Ideas de evolución hacia una solución más avanzada:
 
-- **Predicción avanzada de demanda (TSF)**: Integrar modelos de series de tiempo para estacionalidad (Navidad, campañas, etc.).
+#### 🔬 Funcionalidades técnicas (corto/medio plazo)
+- **Predicción avanzada de demanda (TSF, time-series forecasting)**: Integrar modelos de series de tiempo para estacionalidad (Navidad, campañas, etc.).
 - **Cold Start para nuevos productos**: Estimar ventas iniciales basadas en atributos (categoría, marca, tipo de producto).
-- **Arquitectura de doble capa**: Separar claramente agente de recomendación (solo lectura) y módulo de ejecución (validación + escritura segura).
 - **XAI más formal**: Explicaciones locales más detalladas con contribución de estacionalidad, margen, políticas internas, etc.
+
+#### 🏗️ Arquitectura y escalabilidad (medio/largo plazo)
+- **Arquitectura de doble capa**: Separar claramente agente de recomendación (solo lectura) y módulo de ejecución (validación + escritura segura).
 - **Integraciones**: Conectar con ERPs, POS o sistemas de e‑commerce reales.
 - **Multi‑tenant**: Soporte para múltiples tiendas/cadenas y diferentes usuarios/roles.
 
