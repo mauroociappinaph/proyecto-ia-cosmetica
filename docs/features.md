@@ -20,5 +20,5 @@
 ### 🗄️ Modelo de datos
 - Modelo de datos realista: incluye precio, proveedor, fecha de última reposición, margen básico, etc.
 
-### 🤖 IA local
-- IA local (por defecto): uso de modelos open‑source (ej. Mistral) vía Ollama o LM Studio, sin coste por uso
+### 🤖 IA con Mistral
+- API de Mistral AI: modelos potentes y consistentes para procesamiento de lenguaje natural

@@ -18,7 +18,7 @@
   - 📈 Consultar tendencias de ventas
 
 #### 🤖 Motor de IA
-- **Modelo open‑source** (ej. Mistral), preferentemente local vía Ollama o LM Studio
+- **API de Mistral AI** (modelos como mistral-medium o mistral-large)
 - **Rol**: Asistente principal que:
   - Entiende el mensaje del usuario
   - Decide qué tools MCP llamar

@@ -76,7 +76,7 @@ Demostrar la capacidad de:
 ### 🗣️ Explicaciones de la IA
 - Justifica por qué recomienda reponer, pausar compras o revisar un producto
 - **Modelo de datos realista**: incluye precio, proveedor, fecha de última reposición, margen básico, etc.
-- 🤖 **IA local (por defecto)**: Uso de modelos open‑source (ej. Mistral) vía Ollama o LM Studio, sin coste por uso
+- 🤖 **API de Mistral AI**: Modelos potentes y consistentes para procesamiento de lenguaje natural
 ## 🏗️ Arquitectura de alto nivel
 
 ### 🧩 Componentes
@@ -97,7 +97,7 @@ Demostrar la capacidad de:
   - 📈 Consultar tendencias de ventas
 
 #### 🤖 Motor de IA
-- **Modelo open‑source** (ej. Mistral), preferentemente local vía Ollama o LM Studio
+- **API de Mistral AI** (modelos como mistral-medium o mistral-large)
 - **Rol**: Asistente principal que:
   - Entiende el mensaje del usuario
   - Decide qué tools MCP llamar
@@ -130,11 +130,8 @@ Demostrar la capacidad de:
 - **Servidor MCP**: Implementado en Node.js con tools conectadas directamente a la BD
 
 ### 🤖 IA
-- **Modelo local recomendado**: Mistral (ej. `mistral` en Ollama)
-- **Opciones de ejecución**:
-  - 🦙 Ollama (`ollama pull mistral`)
-  - 🏠 LM Studio
-- **Modo alternativo** (opcional): API de modelo externo compatible (OpenAI, etc.)
+- **API de Mistral AI**: Modelos como mistral-medium o mistral-large
+- **Ventajas**: Rendimiento consistente, sin necesidad de ejecutar modelos localmente
 
 ### 🎨 Frontend
 - **Framework**: Next.js (React)
@@ -328,25 +325,17 @@ Ajusta según tu implementación real.
 9.1 Requisitos previos
 Node.js >= 18
 npm / pnpm / yarn
-Ollama o LM Studio
-(para ejecutar el modelo local de IA)
+API key de Mistral AI
 Git
 (Opcional) Docker + PostgreSQL si quieres usar Postgres en lugar de SQLite.
 9.2 Clonar repositorio
 Bash
 
-git clone https://github.com/tu-usuario/asistente-inventario-ia-cosmeticos.git
-cd asistente-inventario-ia-cosmeticos
-9.3 Configurar modelo de IA (Ollama)
-Instala Ollama según tu sistema operativo.
-Descarga el modelo Mistral:
-Bash
-
-ollama pull mistral
-Inicia el servidor de Ollama (si no arranca automáticamente):
-Bash
-
-ollama serve
+git clone https://github.com/mauroociappinaph/proyecto-ia-cosmetica.git
+cd proyecto-ia-cosmetica
+9.3 Configurar API de Mistral
+Obtén tu API key desde [Mistral AI](https://mistral.ai/).
+Configura la variable de entorno con tu API key.
 9.4 Backend / MCP
 Bash
 
@@ -360,10 +349,10 @@ env
 # Base de datos (SQLite por defecto)
 DATABASE_URL="file:./dev.db"
 
-# IA local vía Ollama
-LLM_PROVIDER="ollama"
-LLM_MODEL="mistral"
-OLLAMA_HOST="http://localhost:11434"
+# API de Mistral AI
+MISTRAL_API_KEY="tu-api-key-aqui"
+LLM_PROVIDER="mistral"
+LLM_MODEL="mistral-medium"
 
 # Puerto del servidor backend/MCP
 PORT=4000
@@ -462,10 +451,8 @@ Conectar con ERPs, POS o sistemas de e‑commerce reales.
 Multi‑tenant
 Soporte para múltiples tiendas/cadenas y diferentes usuarios/roles.
 13. Estructura del repositorio
-Ejemplo de estructura:
 
-Bash
-
+```
 .
 ├── backend/
 │   ├── src/
@@ -484,19 +471,36 @@ Bash
 │   └── .env.example
 │
 ├── frontend/
-│   ├── app/ o src/
-│   │   ├── pages/ o app/
-│   │   │   ├── index.tsx       # Dashboard + chat
-│   │   │   └── api/ (si se usa Next API)
-│   │   ├── components/
-│   │   │   ├── Chat.tsx
-│   │   │   └── InventoryTable.tsx
-│   │   └── lib/
+│   ├── app/
+│   │   ├── page.tsx            # Dashboard + chat
+│   │   └── api/                # (opcional) rutas API de Next
+│   ├── components/
+│   │   ├── Chat.tsx
+│   │   └── InventoryTable.tsx
+│   ├── lib/
 │   ├── package.json
 │   └── .env.example
 │
+├── docs/                       # Documentación detallada (nombres orientativos)
+│   ├── overview.md
+│   ├── architecture.md
+│   ├── features.md
+│   ├── stack.md
+│   ├── model.md
+│   ├── logic.md
+│   ├── mcp.md
+│   ├── ui.md
+│   ├── installation.md
+│   ├── usage.md
+│   ├── limitations.md
+│   ├── roadmap.md
+│   └── structure.md
+│
 ├── README.md
+├── LICENSE
+├── .gitignore
 └── package.json (root, opcional)
+```
 ## 📜 Licencia
 
 Este proyecto está licenciado bajo la **licencia MIT**.

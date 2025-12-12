@@ -6,7 +6,7 @@
 
 - Node.js >= 18
 - npm / pnpm / yarn
-- Ollama o LM Studio (para ejecutar el modelo local de IA)
+- API key de Mistral AI
 - Git
 - (Opcional) Docker + PostgreSQL si quieres usar Postgres en lugar de SQLite
 
@@ -17,20 +17,10 @@ git clone https://github.com/mauroociappinaph/proyecto-ia-cosmetica.git
 cd proyecto-ia-cosmetica
 ```
 
-### 9.3 Configurar modelo de IA (Ollama)
+### 9.3 Configurar API de Mistral
 
-Instala Ollama según tu sistema operativo.
-Descarga el modelo Mistral:
-
-```bash
-ollama pull mistral
-```
-
-Inicia el servidor de Ollama (si no arranca automáticamente):
-
-```bash
-ollama serve
-```
+Obtén tu API key desde [Mistral AI](https://mistral.ai/).
+Configura la variable de entorno con tu API key.
 
 ### 9.4 Backend / MCP
 
@@ -46,10 +36,10 @@ En el archivo `.env`, configurar por ejemplo:
 # Base de datos (SQLite por defecto)
 DATABASE_URL="file:./dev.db"
 
-# IA local vía Ollama
-LLM_PROVIDER="ollama"
-LLM_MODEL="mistral"
-OLLAMA_HOST="http://localhost:11434"
+# API de Mistral AI
+MISTRAL_API_KEY="tu-api-key-aqui"
+LLM_PROVIDER="mistral"
+LLM_MODEL="mistral-medium"
 
 # Puerto del servidor backend/MCP
 PORT=4000
