@@ -2,6 +2,29 @@
 
 > Nota: El layout (chat a la derecha y dashboard a la izquierda) es una referencia visual. En la implementación real puede adaptarse a pestañas o diseño responsive según el tamaño de pantalla.
 
+### Estado de la UI (Zustand)
+
+La interfaz utiliza Zustand para manejar el estado global de manera eficiente:
+
+**Chat Store:**
+- `messages`: Array de mensajes (usuario/IA)
+- `isTyping`: Estado de carga durante respuestas
+- `chatHistory`: Historial persistente en localStorage
+- `connectionStatus`: Estado de conexión con backend
+
+**Inventory Store:**
+- `products`: Lista completa de productos
+- `filteredProducts`: Productos después de aplicar filtros
+- `selectedProduct`: Producto actualmente seleccionado
+- `filters`: Objeto con filtros aplicados (categoría, stock, marca)
+- `loading`: Estado de carga de datos
+
+**UI Store:**
+- `theme`: Tema claro/oscuro
+- `sidebarOpen`: Estado del sidebar en móvil
+- `notifications`: Array de notificaciones toast
+- `modals`: Estados de modales abiertos
+
 ### 8.1 Chat con el asistente
 
 Panel derecho (por ejemplo):
