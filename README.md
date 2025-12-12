@@ -1,145 +1,154 @@
-Asistente de Inventario con IA (Cosméticos)
-Asistente de inventario con inteligencia artificial orientado a tiendas de cosméticos y perfumerías.
+# 💄 Asistente de Inventario con IA (Cosméticos)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-orange.svg)](https://www.prisma.io/)
+
+🤖 **Asistente de inventario con inteligencia artificial orientado a tiendas de cosméticos y perfumerías.**
 Permite consultar stock, analizar ventas y recibir recomendaciones automáticas de reposición a través de una interfaz tipo chat + dashboard, usando un stack moderno (Node.js, TypeScript, Prisma, LLM open‑source y MCP).
 
-Este proyecto está pensado como prototipo de portfolio para mostrar habilidades de:
+Este proyecto está pensado como **prototipo de portfolio** para mostrar habilidades de:
+- 🧠 IA aplicada a un caso real de negocio
+- ⚙️ Backend moderno + base de datos + lógica de negocio
+- 🔗 Orquestación de herramientas vía Model Context Protocol (MCP)
+- 🎨 Diseño de una UI simple orientada a usuarios no técnicos
 
-IA aplicada a un caso real de negocio.
-Backend moderno + base de datos + lógica de negocio.
-Orquestación de herramientas vía Model Context Protocol (MCP).
-Diseño de una UI simple orientada a usuarios no técnicos.
-Índice
-Descripción general
-Características principales
-Arquitectura de alto nivel
-Stack tecnológico
-Modelo de datos
-Lógica de negocio y reasoning de la IA
-IA y orquestación con MCP
-Interfaz de usuario (UI)
-Instalación y configuración
-Uso y ejemplos de consultas
-Limitaciones actuales
-Roadmap y visión futura
-Estructura del repositorio
-Licencia
-1. Descripción general
-Problema
-Pequeñas y medianas tiendas de cosmética suelen gestionar su inventario con Excel o sistemas básicos. Esto implica:
+## 📋 Índice
 
-Revisión manual de stock y ventas.
-Quiebres de stock en productos clave.
-Sobrestock en productos de baja rotación.
-Decisiones de compra basadas en intuición, no en datos.
-Solución
-Un asistente de inventario con IA que:
+- [📖 Descripción general](#-descripción-general)
+- [✨ Características principales](#-características-principales)
+- [🏗️ Arquitectura de alto nivel](#️-arquitectura-de-alto-nivel)
+- [🛠️ Stack tecnológico](#️-stack-tecnológico)
+- [🗄️ Modelo de datos](#️-modelo-de-datos)
+- [🧮 Lógica de negocio y reasoning de la IA](#-lógica-de-negocio-y-reasoning-de-la-ia)
+- [🤖 IA y orquestación con MCP](#-ia-y-orquestación-con-mcp)
+- [🖥️ Interfaz de usuario (UI)](#️-interfaz-de-usuario-ui)
+- [🚀 Instalación y configuración](#-instalación-y-configuración)
+- [💬 Uso y ejemplos de consultas](#-uso-y-ejemplos-de-consultas)
+- [⚠️ Limitaciones actuales](#️-limitaciones-actuales)
+- [🔮 Roadmap y visión futura](#-roadmap-y-visión-futura)
+- [📁 Estructura del repositorio](#-estructura-del-repositorio)
+- [📜 Licencia](#-licencia)
+## 📖 Descripción general
 
-Responde en lenguaje natural preguntas como:
-“¿Qué tengo que reponer esta semana?”
-“¿Qué productos están por agotarse?”
-“¿Qué tengo en sobrestock?”
-Consulta la base de datos de inventario y ventas.
-Aplica reglas simples de negocio para:
-detectar riesgo de quiebre de stock,
-identificar sobrestock / productos estancados,
-resaltar productos estratégicos.
-Devuelve respuestas explicadas, no solo números.
-Objetivo de portfolio
+### 🚨 Problema
+Pequeñas y medianas tiendas de cosmética suelen gestionar su inventario con **Excel** o sistemas básicos. Esto implica:
+- 📊 Revisión manual de stock y ventas
+- ⚠️ Quiebres de stock en productos clave
+- 📦 Sobrestock en productos de baja rotación
+- 🎯 Decisiones de compra basadas en intuición, no en datos
+
+### 💡 Solución
+Un **asistente de inventario con IA** que:
+- 💬 Responde en lenguaje natural preguntas como:
+  - *"¿Qué tengo que reponer esta semana?"*
+  - *"¿Qué productos están por agotarse?"*
+  - *"¿Qué tengo en sobrestock?"*
+- 🔍 Consulta la base de datos de inventario y ventas
+- 📈 Aplica reglas simples de negocio para:
+  - Detectar riesgo de quiebre de stock
+  - Identificar sobrestock / productos estancados
+  - Resaltar productos estratégicos
+- 🗣️ Devuelve respuestas explicadas, no solo números
+
+### 🎯 Objetivo de portfolio
 Demostrar la capacidad de:
+- 🏗️ Diseñar y construir un **sistema end‑to‑end**: IA + backend + BD + UI
+- 🤖 Aplicar razonamiento con IA sobre datos reales
+- 💼 Pensar en términos de producto y no solo de código
+## ✨ Características principales
 
-Diseñar y construir un sistema end‑to‑end:
-IA + backend + BD + UI.
-Aplicar razonamiento con IA sobre datos reales.
-Pensar en términos de producto y no solo de código.
-2. Características principales
-Chat con IA para consultas en lenguaje natural.
-Dashboard visual con:
-lista de productos,
-estado de stock (colores),
-alertas de bajo stock y sobrestock.
-Casos de uso soportados:
-Consultar stock de un producto.
-Ver productos próximos a agotarse.
-Obtener recomendaciones de reposición semanal.
-Ver tendencias de ventas de un producto.
-Detectar productos estancados / sobrestock.
-Ver estado de productos estratégicos.
-Explicaciones de la IA:
-Justifica por qué recomienda reponer, pausar compras o revisar un producto.
-Modelo de datos realista: incluye precio, proveedor, fecha de última reposición, margen básico, etc.
-IA local (por defecto):
-Uso de modelos open‑source (ej. Mistral) vía Ollama o LM Studio, sin coste por uso.
-3. Arquitectura de alto nivel
-3.1 Componentes
-Frontend (UI)
+- 💬 **Chat con IA** para consultas en lenguaje natural
+- 📊 **Dashboard visual** con:
+  - Lista de productos
+  - Estado de stock (colores)
+  - Alertas de bajo stock y sobrestock
 
-Next.js (React).
-Pantallas:
-Chat con el asistente.
-Dashboard de inventario (lista, estado, alertas, gráficos simples).
-Backend / Servidor MCP
+### 🎯 Casos de uso soportados
+- 🔍 Consultar stock de un producto
+- ⚠️ Ver productos próximos a agotarse
+- 📦 Obtener recomendaciones de reposición semanal
+- 📈 Ver tendencias de ventas de un producto
+- 🏪 Detectar productos estancados / sobrestock
+- ⭐ Ver estado de productos estratégicos
 
-Node.js + TypeScript.
-ORM Prisma.
-Base de datos (SQLite por defecto, PostgreSQL opcional).
-Expone herramientas (tools MCP) para:
-Consultar stock.
-Generar reportes (bajo stock, sobrestock, productos estratégicos).
-Consultar tendencias de ventas.
-Motor de IA
+### 🗣️ Explicaciones de la IA
+- Justifica por qué recomienda reponer, pausar compras o revisar un producto
+- **Modelo de datos realista**: incluye precio, proveedor, fecha de última reposición, margen básico, etc.
+- 🤖 **IA local (por defecto)**: Uso de modelos open‑source (ej. Mistral) vía Ollama o LM Studio, sin coste por uso
+## 🏗️ Arquitectura de alto nivel
 
-Modelo open‑source (ej. Mistral), preferentemente local:
-vía Ollama o LM Studio.
-El modelo actúa como asistente principal, que:
-entiende el mensaje del usuario,
-decide qué tools MCP llamar,
-combina resultados y genera respuestas.
-3.2 Flujo de datos (simplificado)
-Usuario escribe en el chat (UI).
-Frontend envía la consulta al backend (/api/chat).
-Backend:
-Llama al modelo de IA con el historial de conversación.
-El modelo decide qué tools MCP usar (por ejemplo, getLowStockReport).
-Servidor MCP ejecuta la tool:
-Consulta la base de datos vía Prisma.
-Devuelve datos estructurados (JSON) al modelo.
-El modelo genera una respuesta final en lenguaje natural:
-explica qué encontró,
-y recomienda acciones (reposición, revisión, etc.).
-El backend reenvía la respuesta al frontend.
-El frontend actualiza:
-el chat,
-y opcionalmente el dashboard (por ejemplo, resaltando productos críticos).
-4. Stack tecnológico
-4.1 Backend
-Lenguaje: Node.js + TypeScript
-ORM: Prisma
-Base de datos:
-Desarrollo/Demo: SQLite (archivo local).
-Producción (opcional): PostgreSQL.
-Servidor MCP:
-Implementado en Node.js.
-Tools conectadas directamente a la BD.
-4.2 IA
-Modelo local recomendado:
-Mistral (por ejemplo, mistral en Ollama).
-Opciones de ejecución:
-Ollama (ollama pull mistral).
-LM Studio.
-Modo alternativo (opcional):
-API de un modelo externo compatible (OpenAI, etc.).
-4.3 Frontend
-Framework: Next.js (React).
-Estilos: TailwindCSS / CSS Modules (a elección).
-Componentes principales:
-Componente de chat.
-Tabla de inventario.
-Indicadores visuales (chips, badges, colores).
-4.4 Por qué este stack
-Stack conocido por recruiters (Node, TS, Prisma, React).
-Uso de MCP para mostrar orquestación de tools por IA (tendencia actual).
-Modelos open‑source → demo totalmente local y gratuita.
-Next.js → facilita una UI clara para perfiles no técnicos.
+### 🧩 Componentes
+
+#### 🎨 Frontend (UI)
+- **Next.js (React)** - Framework moderno para React
+- **Pantallas principales**:
+  - 💬 Chat con el asistente
+  - 📊 Dashboard de inventario (lista, estado, alertas, gráficos simples)
+
+#### ⚙️ Backend / Servidor MCP
+- **Node.js + TypeScript** - Backend robusto y tipado
+- **ORM Prisma** - Manejo de base de datos
+- **Base de datos**: SQLite (desarrollo) / PostgreSQL (producción opcional)
+- **Tools MCP expuestas**:
+  - 🔍 Consultar stock
+  - 📋 Generar reportes (bajo stock, sobrestock, productos estratégicos)
+  - 📈 Consultar tendencias de ventas
+
+#### 🤖 Motor de IA
+- **Modelo open‑source** (ej. Mistral), preferentemente local vía Ollama o LM Studio
+- **Rol**: Asistente principal que:
+  - Entiende el mensaje del usuario
+  - Decide qué tools MCP llamar
+  - Combina resultados y genera respuestas explicativas
+
+### 🔄 Flujo de datos (simplificado)
+1. 👤 **Usuario** escribe en el chat (UI)
+2. 🌐 **Frontend** envía consulta al backend (`/api/chat`)
+3. 🖥️ **Backend**:
+   - Llama al modelo de IA con historial de conversación
+   - Modelo decide tools MCP (ej. `getLowStockReport`)
+4. 🔧 **Servidor MCP** ejecuta tool:
+   - Consulta BD vía Prisma
+   - Devuelve datos JSON al modelo
+5. 🧠 **Modelo** genera respuesta en lenguaje natural:
+   - Explica hallazgos
+   - Recomienda acciones (reposición, revisión, etc.)
+6. 📤 **Backend** reenvía respuesta al frontend
+7. 🔄 **Frontend** actualiza:
+   - Chat
+   - Dashboard (resaltando productos críticos)
+## 🛠️ Stack tecnológico
+
+### ⚙️ Backend
+- **Lenguaje**: Node.js + TypeScript
+- **ORM**: Prisma
+- **Base de datos**:
+  - 🗄️ Desarrollo/Demo: SQLite (archivo local)
+  - 🐘 Producción (opcional): PostgreSQL
+- **Servidor MCP**: Implementado en Node.js con tools conectadas directamente a la BD
+
+### 🤖 IA
+- **Modelo local recomendado**: Mistral (ej. `mistral` en Ollama)
+- **Opciones de ejecución**:
+  - 🦙 Ollama (`ollama pull mistral`)
+  - 🏠 LM Studio
+- **Modo alternativo** (opcional): API de modelo externo compatible (OpenAI, etc.)
+
+### 🎨 Frontend
+- **Framework**: Next.js (React)
+- **Estilos**: TailwindCSS / CSS Modules (a elección)
+- **Componentes principales**:
+  - 💬 Componente de chat
+  - 📊 Tabla de inventario
+  - 🎯 Indicadores visuales (chips, badges, colores)
+
+### ❓ Por qué este stack
+- 🎯 **Stack conocido** por recruiters (Node, TS, Prisma, React)
+- 🔗 **Uso de MCP** para mostrar orquestación de tools por IA (tendencia actual)
+- 💰 **Modelos open‑source** → demo totalmente local y gratuita
+- 🚀 **Next.js** → facilita una UI clara para perfiles no técnicos
 5. Modelo de datos
 Para el MVP se utiliza una tabla principal Product.
 Se pueden añadir más tablas (por ejemplo, Sales) en futuras versiones.
