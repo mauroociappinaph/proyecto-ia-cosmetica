@@ -6,14 +6,14 @@
 - **Base de datos**:
   - 🗄️ Desarrollo/Demo: SQLite (archivo local)
   - 🐘 Producción (opcional): PostgreSQL
-- **Servidor MCP**: Implementado en Node.js con tools conectadas directamente a la BD
+- **Servidor MCP**: Integrado en el backend Node.js, con tools conectadas directamente a la BD
 
 ### 🤖 IA
 - **Modelo local recomendado**: Mistral (ej. `mistral` en Ollama)
 - **Opciones de ejecución**:
   - 🦙 Ollama (`ollama pull mistral`)
   - 🏠 LM Studio
-- **Modo alternativo** (opcional): API de modelo externo compatible (OpenAI, etc.)
+- **Modo alternativo** (opcional y orientado a producción): API de modelo externo compatible (OpenAI, etc.)
 
 ### 🎨 Frontend
 - **Framework**: Next.js (React)
