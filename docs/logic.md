@@ -27,6 +27,8 @@ cantidad_sugerida = max((proyección_7d * 2) - stock_actual, 0)
 
 La idea es cubrir, por ejemplo, dos semanas de ventas basadas en la última semana.
 
+Estas reglas forman parte del diseño del MVP y se implementarán en el backend como lógica de negocio básica.
+
 ### 6.2 Sobreestock / productos estancados
 
 Se consideran productos en sobrestock / estancados aquellos con:
@@ -47,6 +49,8 @@ Si stock_actual > (promedio_diario_30d * 45)
 
 (45 días ≈ horizonte de stock máximo deseado)
 
+Donde "sales_last_30 es baja" puede definirse como ventas_last_30 = 0 (productos totalmente parados) o ventas_last_30 < umbral mínimo para detectar productos con baja rotación.
+
 La IA puede sugerir:
 - Descuentos
 - Bundles
@@ -66,7 +70,7 @@ Las alertas son más agresivas (niveles de riesgo más sensibles).
 
 Pregunta del usuario:
 
-"¿Qué tengo que reponer esta semana?"
+> "¿Qué tengo que reponer esta semana?"
 
 Pasos internos del asistente:
 
