@@ -12,14 +12,14 @@
 
 **Diseño de manejo de estado (Zustand, implementación pendiente):**
 - **Chat Store**: Diseñado para gestionar mensajes, historial, estados de carga (y opcionalmente conexiones WebSocket)
-- **Inventory Store**: Diseñado para gestionar la lista de productos, filtros aplicados, producto seleccionado y cache
+- **Inventory Store**: Diseñado para gestionar la lista de productos, filtros aplicados, producto seleccionado y caché
 - **UI Store**: Diseñado para gestionar tema, modales, notificaciones y estados de carga globales
 
 #### ⚙️ Backend / Servidor MCP
 - **Node.js + TypeScript** - Backend robusto y tipado
 - **ORM Prisma** - Manejo de base de datos
 - **Base de datos**: SQLite (desarrollo) / PostgreSQL (producción opcional)
-- **Servidor MCP integrado en el backend** (se ejecutan en el mismo proceso Node.js para simplificar el despliegue del MVP), que expone tools como:
+- **Servidor MCP integrado en el backend** (se ejecutan en el mismo proceso Node.js para simplificar el despliegue del MVP). Expone tools como:
   - 🔍 Consultar stock
   - 📋 Generar reportes (bajo stock, sobrestock, productos estratégicos)
   - 📈 Consultar tendencias de ventas
