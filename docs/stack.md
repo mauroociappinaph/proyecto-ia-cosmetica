@@ -9,7 +9,7 @@
 - **Servidor MCP**: Integrado en el backend Node.js, con tools conectadas directamente a la BD
 
 ### 🤖 IA
-- **API de Mistral AI**: Modelos como mistral-medium o mistral-large
+- **API de Mistral AI**: Modelo configurable vía MISTRAL_MODEL (por defecto: mistral-medium-latest)
 - **Ventajas**: Rendimiento consistente, sin necesidad de ejecutar modelos localmente
 
 ### 🎨 Frontend
@@ -22,9 +22,9 @@
   - **Barrel exports**: Archivos `index.ts` para exportar módulos relacionados
 
 **Diseño de Stores Zustand:**
-- `useChatStore`: Gestionará estado del chat (mensajes, loading, historial)
-- `useInventoryStore`: Gestionará estado de inventario (productos, filtros, selección)
-- `useUIStore`: Gestionará estado de UI (modales, notificaciones, tema)
+- `useChatStore`: Diseñado para gestionar estado del chat (mensajes, loading, historial)
+- `useInventoryStore`: Diseñado para gestionar estado de inventario (productos, filtros, selección)
+- `useUIStore`: Diseñado para gestionar estado de UI (modales, notificaciones, tema)
 
 - **Componentes principales**:
   - 💬 Componente de chat
