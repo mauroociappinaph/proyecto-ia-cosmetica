@@ -4,25 +4,25 @@
 
 Implementadas en el servidor MCP:
 
-- `getProductStock(productName | sku)`
+- `getProductStock(productName | sku)`[TRAILING_SPACE]
   Devuelve: stock actual, ventas recientes, umbral, info básica del producto
 
-- `getLowStockReport()`
+- `getLowStockReport()`[TRAILING_SPACE]
   Devuelve una lista de productos por debajo de `threshold` o con riesgo de quiebre según proyección simple
 
-- `getSalesTrends(productName | sku)`
+- `getSalesTrends(productName | sku)`[TRAILING_SPACE]
   Devuelve ventas 7/30 días y tendencia básica (sube/baja/estable)
 
-- `recommendReorder(productName | sku)`
+- `recommendReorder(productName | sku)`[TRAILING_SPACE]
   Calcula `cantidad_sugerida` a partir de ventas + stock + umbral
 
-- `searchProducts(keyword)`
+- `searchProducts(keyword)`[TRAILING_SPACE]
   Busca productos por nombre, marca o categoría
 
-- `getOverstockReport()`
+- `getOverstockReport()`[TRAILING_SPACE]
   Detecta productos en potencial sobrestock/estancados
 
-- `getStrategicProductsStatus()`
+- `getStrategicProductsStatus()`[TRAILING_SPACE]
   Lista productos con `is_strategic = true` y su nivel de riesgo
 
 > En esta versión del proyecto, todas las tools MCP son de solo lectura sobre la base de datos; el asistente no ejecuta cambios directos en inventario ni genera órdenes reales.
