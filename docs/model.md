@@ -25,7 +25,7 @@ Campos sugeridos:
 | `margin`           | float     | Margen estimado (puede ser calculado) |
 | `threshold`        | int       | Umbral de alerta de bajo stock |
 | `is_strategic`     | boolean   | Marca productos estratégicos (alto margen/alto volumen) |
-| `created_at`       | datetime  | Fecha de creación del registro (opcional) |
-| `updated_at`       | datetime  | Fecha de última actualización (opcional) |
+| `created_at`       | datetime / timestamp | Fecha de creación del registro (opcional) |
+| `updated_at`       | datetime / timestamp | Fecha de última actualización (opcional) |
 
 > **Nota**: La implementación concreta puede variar (por ejemplo, `margin` calculado en consultas en vez de almacenado, o inclusión de campos de auditoría como `created_at`/`updated_at`).
