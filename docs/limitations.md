@@ -12,4 +12,4 @@ No hay aún:
 - Gestión de usuarios/roles avanzada.
 - Multi‑tenant real (múltiples tiendas).
 - Integraciones con ERP / POS.
-- No está optimizado para volúmenes de datos muy grandes ni para entornos de alta concurrencia; el foco está en la demostración funcional.
+- Optimización para volúmenes de datos muy grandes ni para entornos de alta concurrencia (el foco está en la demostración funcional).
