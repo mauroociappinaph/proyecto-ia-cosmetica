@@ -1,132 +1,56 @@
-## 🏗️ Gestión del Proyecto
+## 🏗️ Metodología y Organización del Desarrollo
 
-Este documento describe el sistema de gestión de proyecto implementado, centrado en GitHub Issues para organizar el desarrollo del MVP.
+Este documento describe la metodología que aplico para organizar el desarrollo de este prototipo, centrada en GitHub Issues para asegurar un proceso transparente y profesional, incluso en un proyecto individual.
 
-### 📊 Estado del Proyecto
+### 📋 Tareas y Planificación (GitHub Issues)
 
-- **Repositorio**: [mauroociappinaph/proyecto-ia-cosmetica](https://github.com/mauroociappinaph/proyecto-ia-cosmetica)
-- **Rama principal**: `develop`
-- **Issues activas**: 6
-- **Labels configuradas**: 5
-- **Commits**: 30+ commits organizados
+Todo el trabajo, desde la implementación de features hasta la corrección de bugs, se desglosa y gestiona en **GitHub Issues**. Esto permite tener una trazabilidad completa de cada tarea y mantener el desarrollo enfocado en los objetivos del MVP.
 
-## 📋 GitHub Issues Activas
+El estado actualizado de todas las tareas, sus prioridades y los detalles técnicos se pueden consultar directamente en el [**tablero de Issues del repositorio**](https://github.com/mauroociappinaph/proyecto-ia-cosmetica/issues).
 
-### Issues del MVP
+### 🏷️ Sistema de Labels
 
-| ID | Título | Área | Prioridad | Estado | Descripción |
-|----|--------|------|-----------|--------|-------------|
-| **#1** | [Implementar Backend + Prisma + Base de Datos](https://github.com/mauroociappinaph/proyecto-ia-cosmetica/issues/1) | Backend | Alta | Abierta | Configuración completa del backend con Prisma ORM y SQLite |
-| **#2** | [Implementar MCP Tools para Consultas de Inventario](https://github.com/mauroociappinaph/proyecto-ia-cosmetica/issues/2) | Backend + IA | Alta | Abierta | 7 tools MCP para consultas de productos y análisis de inventario |
-| **#3** | [Integrar API de Mistral AI](https://github.com/mauroociappinaph/proyecto-ia-cosmetica/issues/3) | IA | Alta | Abierta | Cliente HTTP, manejo de errores y configuración de rate limiting |
-| **#4** | [Implementar UI Chat con Historial de Conversación](https://github.com/mauroociappinaph/proyecto-ia-cosmetica/issues/4) | Frontend | Alta | Abierta | `good first issue` - Componentes de chat con Zustand |
-| **#5** | [Implementar Dashboard con Gráficos y Alertas](https://github.com/mauroociappinaph/proyecto-ia-cosmetica/issues/5) | Frontend | Alta | Abierta | Tabla de productos, indicadores visuales y métricas |
-| **#6** | [Implementar Lógica de Negocio y Reglas de Reposición](https://github.com/mauroociappinaph/proyecto-ia-cosmetica/issues/6) | Backend + IA | Alta | Abierta | Algoritmos de proyección de demanda y reglas de negocio |
+Para mantener las issues organizadas, utilizo un sistema de labels basado en prefijos que permite filtrar y priorizar el trabajo de forma eficiente.
 
-## 🏷️ Sistema de Labels
+#### Labels por Área
+- **`area:backend`** 🔵 - Desarrollo backend e infraestructura.
+- **`area:frontend`** 🟢 - Desarrollo frontend y UI.
+- **`area:ia`** 🔴 - Integración de IA y lógica de negocio.
 
-### Labels por Área
-- **`area:backend`** 🔵 - Desarrollo backend e infraestructura
-- **`area:frontend`** 🟢 - Desarrollo frontend y UI
-- **`area:ia`** 🔴 - Integración de IA y machine learning
+#### Labels por Tipo
+- **`type:feature`** ✨ - Nuevas funcionalidades.
+- **`type:bug`** 🐞 - Corrección de errores.
+- **`type:docs`** 📄 - Tareas relacionadas con la documentación.
 
-### Labels por Tipo
-- **`type:feature`** 🔵 - Nueva funcionalidad/implementación
+#### Labels por Prioridad
+- **`priority:high`** 🔴 - Crítico para el MVP.
+- **`priority:medium`** 🟠 - Importante, pero no bloqueante.
+- **`priority:low`** 🟢 - Deseable, pero puede posponerse.
 
-### Labels por Prioridad
-- **`priority:high`** 🔴 - Crítico para el MVP
+### 🔄 Workflow de Desarrollo
 
-### Labels Especiales
-- **`good first issue`** 🟣 - Ideal para colaboradores nuevos
+Aunque es un proyecto individual, sigo un flujo de trabajo disciplinado basado en GitFlow para asegurar la calidad y el orden del código.
 
-## 🔄 Workflow de Desarrollo
+1.  **Selección de Issue**: Comienzo el trabajo seleccionando una issue prioritaria del backlog.
+2.  **Desarrollo en Ramas**: Creo una rama específica para la issue desde `develop` (ej: `feature/issue-4-chat-ui`). Todo el trabajo se realiza en esta rama.
+3.  **Commits Descriptivos**: Utilizo el estándar de [Conventional Commits](https://www.conventionalcommits.org/) para los mensajes de commit (ej: `feat(ui): add chat message component`).
+4.  **Pull Request**: Una vez finalizada la implementación y las pruebas locales, abro un Pull Request contra la rama `develop`, vinculando la issue que resuelve.
+5.  **Auto-Revisión y Merge**: Realizo una auto-revisión crítica del Pull Request, verificando que el código cumple con los objetivos, sigue las buenas prácticas y los tests pasan. Una vez validado, se hace el merge.
 
-### 1. Selección de Issue
-- Revisar issues abiertas con `priority:high`
-- Comenzar por dependencias: Backend (#1) → IA (#3) → MCP (#2) → Lógica (#6) → Frontend (#4, #5)
+### 📈 Próximos Milestones
 
-### 2. Desarrollo
-- Crear rama desde `develop`: `git checkout -b feature/issue-N-titulo`
-- Implementar siguiendo checklist del issue
-- Commits descriptivos: `feat: implement backend with Prisma ORM`
+El trabajo del MVP se agrupa en dos grandes hitos (milestones) para organizar el progreso:
 
-### 3. Testing y QA
-- Tests unitarios para lógica de negocio
-- Tests de integración para APIs
-- Validación manual de funcionalidades
+-   **Milestone 1**: Backend funcional e IA (Issues #1, #2, #3, #6).
+-   **Milestone 2**: Interfaz de usuario (Issues #4, #5).
 
-### 4. Pull Request
-- Push a rama feature
-- Crear PR contra `develop`
-- Descripción detallada de cambios
-- Vincular issue resuelta
+### 🤝 Colaboración
 
-### 5. Code Review y Merge
-- Revisión por pares (cuando haya equipo)
-- Tests pasan
-- Merge a `develop`
+Este es un proyecto de portfolio personal, pero cualquier sugerencia, reporte de bug o idea de mejora es bienvenida. La mejor forma de colaborar es creando un **Issue** en el repositorio para iniciar la conversación.
 
-## 🤝 Guía de Contribución
+### 🛠️ Herramientas Principales
 
-### Para Contribuidores Externos
-1. Revisar issues con label `good first issue`
-2. Fork del repositorio
-3. Crear rama feature
-4. Implementar siguiendo especificaciones del issue
-5. Crear PR con descripción detallada
-
-### Requisitos para Contribuciones
-- Código comentado y legible
-- Tests incluidos cuando aplique
-- Actualización de documentación si es necesario
-- Commits siguiendo conventional commits
-
-### Comunicación
-- Usar issues para reportar bugs o sugerir features
-- Discusiones técnicas en los threads de issues
-- Preguntas generales en discussions (si está habilitado)
-
-## 📈 Métricas del Proyecto
-
-### Commits por Categoría
-- **Documentación**: 15+ commits
-- **Configuración**: 5+ commits
-- **Features**: Pendiente de implementación
-
-### Cobertura de Documentación
-- ✅ Arquitectura completa
-- ✅ Stack tecnológico detallado
-- ✅ Roadmap definido
-- ✅ Estructura de código diseñada
-- ✅ Guía de instalación completa
-
-### Próximos Milestones
-- **Milestone 1**: Backend + IA (Issues #1, #2, #3, #6)
-- **Milestone 2**: Frontend (Issues #4, #5)
-
-## 🛠️ Herramientas de Desarrollo
-
-### Versionado
-- **Git**: Control de versiones distribuido
-- **Conventional Commits**: Estándar para mensajes de commit
-
-### Gestión de Proyecto
-- **GitHub Issues**: Sistema de tickets y seguimiento
-- **Labels**: Organización por área y prioridad
-- **Milestones**: Agrupación de issues relacionadas
-
-### Calidad de Código
-- **ESLint/Prettier**: Linting y formateo (planeado)
-- **TypeScript**: Tipado estático
-- **Tests**: Unitarios y de integración (planeado)
-
-## 📞 Soporte
-
-Para preguntas sobre el proyecto:
-- Issues en GitHub para bugs/features
-- Documentación en `/docs/` para referencia técnica
-- README.md para visión general
-
----
-
-*Esta documentación refleja el estado actual del proyecto. Se actualizará conforme avance la implementación.*
+-   **Versionado**: Git.
+-   **Gestión de Tareas**: GitHub Issues, Labels & Milestones.
+-   **Calidad de Código**: ESLint/Prettier y TypeScript (planeado).
+-   **Testing**: Pruebas unitarias y de integración (planeado).
