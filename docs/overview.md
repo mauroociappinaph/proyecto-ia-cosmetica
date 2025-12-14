@@ -10,9 +10,9 @@ Pequeñas y medianas tiendas de cosmética, principalmente tiendas físicas inde
 ### 💡 Solución
 Un **asistente de inventario con IA** que:
 - 💬 Responde en lenguaje natural preguntas como:
-  - *"¿Qué tengo que reponer esta semana?"*
-  - *"¿Qué productos están por agotarse?"*
-  - *"¿Qué tengo en sobrestock?"*
+  - "¿Qué tengo que reponer esta semana?"
+  - "¿Qué productos están por agotarse?"
+  - "¿Qué tengo en sobrestock?"
 - 🔍 Consulta la base de datos de inventario y ventas
 - 📈 Aplica reglas simples de negocio para:
   - Detectar riesgo de quiebre de stock
@@ -27,3 +27,7 @@ Demostrar la capacidad de:
 - 🏗️ Diseñar y construir un **sistema end‑to‑end**: IA + backend + BD + UI
 - 🤖 Aplicar razonamiento con IA sobre datos reales
 - 💼 Pensar en términos de producto y no solo de código
+
+---
+
+*Este documento describe el diseño del sistema; la implementación se realizará por fases siguiendo el roadmap técnico.*
