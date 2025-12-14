@@ -6,7 +6,7 @@
 [![Prisma](https://img.shields.io/badge/Prisma-ORM-orange.svg)](https://www.prisma.io/)
 
 🤖 **Asistente de inventario con inteligencia artificial orientado a tiendas de cosméticos y perfumerías.**
-Permite consultar stock, analizar ventas y recibir recomendaciones automáticas de reposición a través de una interfaz tipo chat + dashboard, usando un stack moderno (Node.js, TypeScript, Prisma, LLM open‑source y MCP).
+Permite consultar stock, analizar ventas y recibir recomendaciones automáticas de reposición a través de una interfaz tipo chat + dashboard, usando un stack moderno (Node.js, TypeScript, Prisma, API de Mistral AI y MCP).
 
 ## 📊 Estado del Proyecto
 
@@ -35,7 +35,7 @@ Este proyecto está pensado como **prototipo de portfolio** para mostrar habilid
 - [💬 Uso y ejemplos de consultas](#uso-y-ejemplos-de-consultas)
 - [⚠️ Limitaciones actuales](#limitaciones-actuales)
 - [🔮 Roadmap y visión futura](#roadmap-y-visión-futura)
-- [🏗️ Gestión del proyecto](#gestión-del-proyecto)
+- [🏛️ Organización del Proyecto](#organización-del-proyecto)
 - [📁 Estructura del repositorio](#estructura-del-repositorio)
 - [📜 Licencia](#licencia)
 ## 📖 Descripción general
@@ -212,12 +212,12 @@ graph TB
 - **Servidor MCP**: Implementado en Node.js con tools conectadas directamente a la BD
 
 ### 🤖 IA
-- **API de Mistral AI**: Modelos como mistral-medium o mistral-large
+- **API de Mistral AI**: Modelo configurable vía MISTRAL_MODEL (por defecto: mistral-medium-latest)
 - **Ventajas**: Rendimiento consistente, sin necesidad de ejecutar modelos localmente
 
 ### 🎨 Frontend
 - **Framework**: Next.js (React)
-- **Estado global**: Zustand (librería ligera para manejo de estado)
+- **Estado global**: Zustand (librería ligera para manejo de estado, diseñada para la futura implementación de la UI)
 - **Patrones**: SRP, DRY, barrel exports
 - **Estilos**: TailwindCSS / CSS Modules (a elección)
 - **Componentes principales**:
@@ -306,17 +306,20 @@ La IA puede sugerir:
 - Descuentos
 - Bundles
 - Campañas promocionales
-6.3 Productos estratégicos
-Productos marcados con is_strategic = true:
+
+### 6.3 Productos estratégicos
+Productos marcados con `is_strategic = true`:
 
 Se consideran prioritarios en:
-reportes de bajo stock,
-recomendaciones de reposición.
-Las alertas son más agresivas (niveles de riesgo más sensibles).
-6.4 Ejemplo concreto de reasoning de la IA
-Pregunta del usuario:
+- Reportes de bajo stock
+- Recomendaciones de reposición
 
-“¿Qué tengo que reponer esta semana?”
+Las alertas son más agresivas (niveles de riesgo más sensibles).
+
+### 6.4 Ejemplo concreto de reasoning de la IA
+**Pregunta del usuario:**
+
+"¿Qué tengo que reponer esta semana?"
 
 Pasos internos del asistente:
 
@@ -335,10 +338,11 @@ Genera una respuesta en lenguaje natural, por ejemplo:
 
 20 unidades del Serum Antioxidante X: vendiste unas 5 por día en la última semana y solo tenés 10 en stock; en menos de 3 días te quedarías sin unidades. Es un producto estratégico con buen margen.
 15 unidades de la Crema Hidratante Y: representa el 12% de tus ventas del mes y tu stock actual solo cubre aproximadamente 5 días.
-El resto de los productos está dentro de niveles normales de inventario.”
+El resto de los productos está dentro de niveles normales de inventario."
 
-7. IA y orquestación con MCP
-7.1 Tools MCP disponibles
+## 🤖 IA y orquestación con MCP
+
+### 7.1 Tools MCP disponibles
 Implementadas en el servidor MCP:
 
 getProductStock(productName | sku)
@@ -367,69 +371,76 @@ Detecta productos en potencial sobrestock/estancados.
 getStrategicProductsStatus()
 
 Lista productos con is_strategic = true y su nivel de riesgo.
-7.2 Asistente de IA (agente principal)
-Rol: Asistente de inventario para tiendas de cosmética.
-Responsabilidades:
-Entender la intención del usuario.
-Elegir y llamar tools MCP adecuadas.
-Integrar los resultados con las reglas de negocio.
-Responder en lenguaje natural, explicando el razonamiento.
+### 7.2 Asistente de IA (agente principal)
+**Rol**: Asistente de inventario para tiendas de cosmética.
+
+**Responsabilidades:**
+- Entender la intención del usuario
+- Elegir y llamar tools MCP adecuadas
+- Integrar los resultados con las reglas de negocio
+- Responder en lenguaje natural, explicando el razonamiento
+
 Por simplicidad, esta versión utiliza un solo agente (asistente principal).
 En una versión futura podría separarse en:
+- Agente de recomendación (solo lectura)
+- Módulo de ejecución (validación + escritura en sistemas reales)
 
-Agente de recomendación (solo lectura).
-Módulo de ejecución (validación + escritura en sistemas reales).
-8. Interfaz de usuario (UI)
-8.1 Chat con el asistente
+## 🖥️ Interfaz de usuario (UI)
+
+### 8.1 Chat con el asistente
 Panel derecho (por ejemplo):
-Historial de conversación.
-Entrada de texto.
-Botones de “consultas rápidas” (shortcuts), como:
-“Productos por agotarse”
-“Reposición semanal recomendada”
-“Productos en sobrestock”
-8.2 Dashboard de inventario
+- Historial de conversación
+- Entrada de texto
+- Botones de "consultas rápidas" (shortcuts), como:
+  - "Productos por agotarse"
+  - "Reposición semanal recomendada"
+  - "Productos en sobrestock"
+
+### 8.2 Dashboard de inventario
 Panel izquierdo o pestaña separada:
-Tabla de productos con:
-nombre, sku, marca, stock, ventas recientes, estado.
-Indicadores visuales:
-Verde: stock normal.
-Amarillo: revisar pronto.
-Rojo: bajo stock / crítico.
-Alertas:
-Lista de productos críticos.
-Lista de productos en posible sobrestock.
-Gráfico sencillo (opcional):
-Top N productos por ventas últimos 30 días.
-O gráfico de barras con los productos estratégicos y su stock.
-9. Instalación y configuración
-Nota: los nombres de carpetas/scripts son orientativos.
-Ajusta según tu implementación real.
+- Tabla de productos con:
+  - Nombre, SKU, marca, stock, ventas recientes, estado
+- Indicadores visuales:
+  - Verde: stock normal
+  - Amarillo: revisar pronto
+  - Rojo: bajo stock / crítico
+- Alertas:
+  - Lista de productos críticos
+  - Lista de productos en posible sobrestock
+- Gráfico sencillo (opcional):
+  - Top N productos por ventas últimos 30 días
+  - O gráfico de barras con los productos estratégicos y su stock
 
-9.1 Requisitos previos
-Node.js >= 18
-npm / pnpm / yarn
-API key de Mistral AI
-Git
-(Opcional) Docker + PostgreSQL si quieres usar Postgres en lugar de SQLite.
-9.2 Clonar repositorio
-Bash
+## 🚀 Instalación y configuración
 
+> Nota: Los nombres de carpetas/scripts son orientativos. Ajusta según tu implementación real.
+
+### 9.1 Requisitos previos
+- Node.js >= 18
+- npm / pnpm / yarn
+- API key de Mistral AI
+- Git
+- (Opcional) Docker + PostgreSQL si quieres usar Postgres en lugar de SQLite
+
+### 9.2 Clonar repositorio
+```bash
 git clone https://github.com/mauroociappinaph/proyecto-ia-cosmetica.git
 cd proyecto-ia-cosmetica
-9.3 Configurar API de Mistral
+```
+
+### 9.3 Configurar API de Mistral
 Obtén tu API key desde [Mistral AI](https://mistral.ai/).
 Configura la variable de entorno con tu API key.
-9.4 Backend / MCP
-Bash
-
+### 9.4 Backend / MCP
+```bash
 cd backend
 cp .env.example .env
 npm install
-En el archivo .env, configurar por ejemplo:
+```
 
-env
+En el archivo `.env`, configurar por ejemplo:
 
+```env
 # Base de datos (SQLite por defecto)
 DATABASE_URL="file:./dev.db"
 
@@ -439,103 +450,104 @@ MISTRAL_MODEL="mistral-medium-latest"
 
 # Puerto del servidor backend/MCP
 PORT=4000
-Migraciones y seed
-Bash
+```
 
+#### Migraciones y seed
+```bash
 npx prisma migrate dev
 npx prisma db seed   # si tienes script de seed configurado
-Ejecutar backend
-Bash
+```
 
+#### Ejecutar backend
+```bash
 npm run dev
+```
+
 Por defecto debería levantar en http://localhost:4000.
 
-9.5 Frontend (Next.js)
-Bash
-
+### 9.5 Frontend (Next.js)
+```bash
 cd ../frontend
 cp .env.example .env
 npm install
-En .env (frontend):
+```
 
-env
+#### Configuración de entorno
+En `.env` (frontend):
 
+```env
 NEXT_PUBLIC_API_URL="http://localhost:4000"
-Ejecutar frontend
-Bash
+```
 
+#### Ejecutar frontend
+```bash
 npm run dev
+```
+
 Frontend disponible en http://localhost:3000 (por defecto).
 
-10. Uso y ejemplos de consultas
+## 💬 Uso y ejemplos de consultas
+
 Una vez levantado el backend y el frontend:
 
-Abre http://localhost:3000 en el navegador.
+Abre `http://localhost:3000` en el navegador.
 Verás:
-el chat con el asistente,
-y/o el dashboard con la lista de productos.
-10.1 Ejemplos de consultas útiles
-Consultar stock de un producto:
+- El chat con el asistente
+- Y/o el dashboard con la lista de productos
 
-“¿Cuántas unidades quedan del serum antioxidante X?”
+### 10.1 Ejemplos de consultas útiles
 
-Ver productos próximos a agotarse:
+**Consultar stock de un producto:**
+- "¿Cuántas unidades quedan del serum antioxidante X?"
 
-“¿Qué productos están por agotarse esta semana?”
+**Ver productos próximos a agotarse:**
+- "¿Qué productos están por agotarse esta semana?"
 
-Recomendaciones de reposición:
+**Recomendaciones de reposición:**
+- "¿Qué tengo que reponer esta semana?"
 
-“¿Qué tengo que reponer esta semana?”
+**Tendencia de ventas:**
+- "¿Cómo se movieron las ventas del ácido hialurónico este mes?"
 
-Tendencia de ventas:
+**Sobrestock / productos estancados:**
+- "Mostrame los productos que tengo en sobrestock o se venden muy lento."
 
-“¿Cómo se movieron las ventas del ácido hialurónico este mes?”
+**Productos estratégicos:**
+- "¿Cómo están mis productos estratégicos hoy?"
 
-Sobrestock / productos estancados:
+### 10.2 Interpretación de respuestas
 
-“Mostrame los productos que tengo en sobrestock o se venden muy lento.”
-
-Productos estratégicos:
-
-“¿Cómo están mis productos estratégicos hoy?”
-
-10.2 Interpretación de respuestas
 El asistente debería:
-mencionar el producto, el stock actual y las ventas recientes,
-indicar si hay riesgo de quiebre,
-sugerir una cantidad a reponer cuando sea necesario,
-justificar la recomendación con referencias a ventas y stock.
-11. Limitaciones actuales
+- Mencionar el producto, el stock actual y las ventas recientes
+- Indicar si hay riesgo de quiebre
+- Sugerir una cantidad a reponer cuando sea necesario
+- Justificar la recomendación con referencias a ventas y stock
+
+## ⚠️ Limitaciones actuales
+
 Este prototipo está pensado como MVP de portfolio, por lo que:
 
-Las reglas de negocio son simples (no hay modelos de series de tiempo avanzados).
-La IA no escribe directamente en sistemas externos (no crea órdenes de compra reales).
-Depende de que los datos de inventario estén razonablemente actualizados.
-No hay aún:
-gestión de usuarios/roles avanzada,
-multi‑tenant real (múltiples tiendas),
-integraciones con ERP / POS.
-12. Roadmap y visión futura
+- Las reglas de negocio son simples (no hay modelos de series de tiempo avanzados)
+- La IA no escribe directamente en sistemas externos (no crea órdenes de compra reales)
+- Depende de que los datos de inventario estén razonablemente actualizados
+- No hay aún:
+  - Gestión de usuarios/roles avanzada
+  - Multi‑tenant real (múltiples tiendas)
+  - Integraciones con ERP / POS
+
+## 🔮 Roadmap y visión futura
+
 Ideas de evolución hacia una solución más avanzada:
 
-Módulo CRUD de productos
-Interfaz de administración para gestionar inventario (crear/editar/eliminar productos, actualizar stock).
-Predicción avanzada de demanda (TSF)
-Integrar modelos de series de tiempo para estacionalidad (Navidad, campañas, etc.).
-Cold Start para nuevos productos
-Estimar ventas iniciales basadas en atributos (categoría, marca, tipo de producto).
-Arquitectura de doble capa
-Separar claramente:
-agente de recomendación (solo lectura),
-módulo de ejecución (validación + escritura segura).
-XAI más formal
-Explicaciones locales más detalladas:
-contribución de estacionalidad, margen, políticas internas, etc.
-Integraciones
-Conectar con ERPs, POS o sistemas de e‑commerce reales.
-Multi‑tenant
-Soporte para múltiples tiendas/cadenas y diferentes usuarios/roles.
-13. Estructura del repositorio
+- **Módulo CRUD de productos**: Interfaz de administración para gestionar inventario (crear/editar/eliminar productos, actualizar stock)
+- **Predicción avanzada de demanda (TSF)**: Integrar modelos de series de tiempo para estacionalidad (Navidad, campañas, etc.)
+- **Cold Start para nuevos productos**: Estimar ventas iniciales basadas en atributos (categoría, marca, tipo de producto)
+- **Arquitectura de doble capa**: Separar claramente agente de recomendación (solo lectura) y módulo de ejecución (validación + escritura segura)
+- **XAI más formal**: Explicaciones locales más detalladas con contribución de estacionalidad, margen, políticas internas, etc.
+- **Integraciones**: Conectar con ERPs, POS o sistemas de e‑commerce reales
+- **Multi‑tenant**: Soporte para múltiples tiendas/cadenas y diferentes usuarios/roles
+
+## 📁 Estructura del repositorio
 
 ```
 .
@@ -586,6 +598,10 @@ Soporte para múltiples tiendas/cadenas y diferentes usuarios/roles.
 ├── .gitignore
 └── package.json (root, opcional)
 ```
+## 🏛️ Organización del Proyecto
+
+Este proyecto se gestiona con una metodología disciplinada para garantizar la calidad y la transparencia del desarrollo. Cada funcionalidad se planifica como un **Issue** en GitHub y se agrupa en **Milestones** para seguir el progreso hacia los objetivos del MVP. El trabajo se realiza en ramas separadas y se integra a través de **Pull Requests** con auto-revisión, asegurando que cada cambio esté justificado y sea trazable. Este enfoque demuestra la aplicación de prácticas profesionales incluso en un proyecto individual.
+
 ## 📜 Licencia
 
 Este proyecto está licenciado bajo la **licencia MIT**.
