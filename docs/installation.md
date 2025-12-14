@@ -2,7 +2,7 @@
 
 > **Estado del proyecto**: Documentación completa. Implementación en desarrollo.
 
-> Nota: Los nombres de carpetas/scripts son orientativos. Ajusta según tu implementación real.
+> Nota: Los nombres de carpetas/scripts son orientativos. Esta es la estructura prevista para la implementación; ajusta según tu implementación real.
 
 ### 9.1 Requisitos previos
 
@@ -54,7 +54,7 @@ npx prisma migrate dev
 npx prisma db seed   # si tienes script de seed configurado
 ```
 
-**Ejecutar backend:**
+**Ejecutar backend (cuando esté implementado):**
 ```bash
 npm run dev
 ```
@@ -75,7 +75,7 @@ En `.env` (frontend):
 NEXT_PUBLIC_API_URL="http://localhost:4000"
 ```
 
-**Ejecutar frontend:**
+**Ejecutar frontend (cuando esté implementado):**
 ```bash
 npm run dev
 ```
