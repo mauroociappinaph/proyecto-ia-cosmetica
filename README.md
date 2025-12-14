@@ -517,6 +517,8 @@ integraciones con ERP / POS.
 12. Roadmap y visión futura
 Ideas de evolución hacia una solución más avanzada:
 
+Módulo CRUD de productos
+Interfaz de administración para gestionar inventario (crear/editar/eliminar productos, actualizar stock).
 Predicción avanzada de demanda (TSF)
 Integrar modelos de series de tiempo para estacionalidad (Navidad, campañas, etc.).
 Cold Start para nuevos productos
