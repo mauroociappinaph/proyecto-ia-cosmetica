@@ -4,7 +4,7 @@ Este documento describe la metodología que aplico para organizar el desarrollo 
 
 ### 📋 Tareas y Planificación (GitHub Issues)
 
-Todo el trabajo, desde la implementación de features hasta la corrección de bugs, se desglosa y gestiona en **GitHub Issues**. Esto permite tener una trazabilidad completa de cada tarea y mantener el desarrollo enfocado en los objetivos del MVP.
+La intención es que todo el trabajo, desde la implementación de features hasta la corrección de bugs, se desglose y gestione en **GitHub Issues**. Esto permite tener una trazabilidad completa de cada tarea y mantener el desarrollo enfocado en los objetivos del MVP.
 
 El estado actualizado de todas las tareas, sus prioridades y los detalles técnicos se pueden consultar directamente en el [**tablero de Issues del repositorio**](https://github.com/mauroociappinaph/proyecto-ia-cosmetica/issues).
 
@@ -54,3 +54,4 @@ Este es un proyecto de portfolio personal, pero cualquier sugerencia, reporte de
 -   **Gestión de Tareas**: GitHub Issues, Labels & Milestones.
 -   **Calidad de Código**: ESLint/Prettier y TypeScript (planeado).
 -   **Testing**: Pruebas unitarias y de integración (planeado).
+-   **Automatización de calidad (diseñada)**: Hooks pre-commit con Husky y workflow de GitHub Actions para validar documentación y cambios.
