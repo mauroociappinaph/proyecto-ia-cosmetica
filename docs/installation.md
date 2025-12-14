@@ -59,7 +59,7 @@ npx prisma db seed   # si tienes script de seed configurado
 npm run dev
 ```
 
-Por defecto debería levantar en http://localhost:4000.
+Por defecto debería levantar en `http://localhost:4000`.
 
 ### 9.5 Frontend (Next.js)
 
@@ -80,4 +80,4 @@ NEXT_PUBLIC_API_URL="http://localhost:4000"
 npm run dev
 ```
 
-Frontend disponible en http://localhost:3000 (por defecto).
+Frontend disponible en `http://localhost:3000` (por defecto).
