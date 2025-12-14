@@ -65,6 +65,7 @@
 │   ├── usage.md
 │   ├── limitations.md
 │   ├── roadmap.md
+│   ├── project-management.md    # Gestión del proyecto y GitHub Issues
 │   └── structure.md
 │
 ├── README.md

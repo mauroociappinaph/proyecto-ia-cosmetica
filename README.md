@@ -35,6 +35,7 @@ Este proyecto está pensado como **prototipo de portfolio** para mostrar habilid
 - [💬 Uso y ejemplos de consultas](#uso-y-ejemplos-de-consultas)
 - [⚠️ Limitaciones actuales](#limitaciones-actuales)
 - [🔮 Roadmap y visión futura](#roadmap-y-visión-futura)
+- [🏗️ Gestión del proyecto](#gestión-del-proyecto)
 - [📁 Estructura del repositorio](#estructura-del-repositorio)
 - [📜 Licencia](#licencia)
 ## 📖 Descripción general
