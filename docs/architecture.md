@@ -10,22 +10,22 @@
   - 💬 Chat con el asistente
   - 📊 Dashboard de inventario (lista, estado, alertas, gráficos simples)
 
-**Diseño de Manejo de Estado (Zustand):**
-- **Chat Store**: Gestionará mensajes, historial, estados de carga, conexiones WebSocket
-- **Inventory Store**: Gestionará lista de productos, filtros aplicados, producto seleccionado, cache
-- **UI Store**: Gestionará tema, modales, notificaciones, estados de carga globales
+**Diseño de manejo de estado (Zustand, implementación pendiente):**
+- **Chat Store**: Diseñado para gestionar mensajes, historial, estados de carga (y opcionalmente conexiones WebSocket)
+- **Inventory Store**: Diseñado para gestionar la lista de productos, filtros aplicados, producto seleccionado y cache
+- **UI Store**: Diseñado para gestionar tema, modales, notificaciones y estados de carga globales
 
 #### ⚙️ Backend / Servidor MCP
 - **Node.js + TypeScript** - Backend robusto y tipado
 - **ORM Prisma** - Manejo de base de datos
 - **Base de datos**: SQLite (desarrollo) / PostgreSQL (producción opcional)
-- **Servidor MCP integrado en el backend**, que expone tools como:
+- **Servidor MCP integrado en el backend** (se ejecutan en el mismo proceso Node.js para simplificar el despliegue del MVP), que expone tools como:
   - 🔍 Consultar stock
   - 📋 Generar reportes (bajo stock, sobrestock, productos estratégicos)
   - 📈 Consultar tendencias de ventas
 
 #### 🤖 Motor de IA
-- **API de Mistral AI** (modelos como mistral-medium o mistral-large)
+- **API de Mistral AI** – Modelo configurable vía `MISTRAL_MODEL` (por defecto: `mistral-medium-latest`)
 - **Rol**: Asistente principal que:
   - Entiende el mensaje del usuario
   - Decide qué tools MCP llamar
