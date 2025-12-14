@@ -1,6 +1,6 @@
 ## 🗄️ Modelo de datos
 
-Para el MVP se utiliza una tabla principal `Product`.
+Para el MVP se utiliza una tabla principal `Product` (diseñada para la primera versión de implementación).
 Se pueden añadir más tablas (por ejemplo, `Sales`) en futuras versiones.
 
 ### Tabla `Product`
@@ -25,5 +25,7 @@ Campos sugeridos:
 | `margin`           | float     | Margen estimado (puede ser calculado) |
 | `threshold`        | int       | Umbral de alerta de bajo stock |
 | `is_strategic`     | boolean   | Marca productos estratégicos (alto margen/alto volumen) |
+| `created_at`       | datetime  | Fecha de creación del registro (opcional) |
+| `updated_at`       | datetime  | Fecha de última actualización (opcional) |
 
-> **Nota**: La implementación concreta puede variar (por ejemplo, `margin` calculado en consultas en vez de almacenado).
+> **Nota**: La implementación concreta puede variar (por ejemplo, `margin` calculado en consultas en vez de almacenado, o inclusión de campos de auditoría como `created_at`/`updated_at`).
