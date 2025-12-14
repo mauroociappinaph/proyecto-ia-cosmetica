@@ -31,7 +31,7 @@ Implementadas en el servidor MCP:
 
 **Rol**: Asistente de inventario para tiendas de cosmética.
 
-El asistente utiliza estas tools MCP de forma automática según la intención del usuario (por ejemplo, usa `getLowStockReport` cuando el usuario pregunta "¿qué productos están por agotarse?").
+El asistente utiliza estas tools MCP de forma automática según la intención del usuario (por ejemplo, usa `getLowStockReport` cuando el usuario pregunta: "¿Qué productos están por agotarse?").
 
 **Responsabilidades**:
 - Entender la intención del usuario
