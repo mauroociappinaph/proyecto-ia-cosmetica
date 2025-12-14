@@ -8,7 +8,7 @@ Este prototipo está pensado como MVP de portfolio, por lo que:
 - La IA no escribe directamente en sistemas externos (no crea órdenes de compra reales).
 - Depende de que los datos de inventario estén razonablemente actualizados.
 
-No hay aún:
+Por ahora no hay:
 - Gestión de usuarios/roles avanzada.
 - Multi‑tenant real (múltiples tiendas).
 - Integraciones con ERP / POS.
