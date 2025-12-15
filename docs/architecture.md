@@ -47,3 +47,11 @@
 7. 🔄 **Frontend** actualiza:
    - Chat
    - Dashboard (resaltando productos críticos)
+
+### Manejo de errores y fallbacks (diseñado)
+
+- Si el modelo de IA no entiende la pregunta o no sugiere una tool válida:
+  - El backend devolverá un mensaje genérico ("No entendí tu consulta, ¿podés reformularla…?") y no ejecutará ninguna tool.
+- Si una tool MCP devuelve error (por ejemplo, la base de datos no responde):
+  - El asistente informará el fallo ("No pude acceder al inventario en este momento…") y registrará el error en los logs.
+- Todas las respuestas del asistente deben ser robustas ante errores de red o datos faltantes.
