@@ -1,5 +1,7 @@
 ## 📁 Estructura del repositorio
 
+> Nota: Esta estructura está diseñada para la primera versión de implementación del proyecto. Algunos directorios/archivos pueden no existir todavía mientras el desarrollo está en curso.
+
 ```
 .
 ├── backend/
@@ -36,7 +38,7 @@
 │   │   │   ├── Badge.tsx
 │   │   │   ├── index.ts        # Barrel export
 │   │   └── index.ts            # Barrel export principal
-│   ├── stores/                 # Estado global con Zustand
+│   ├── stores/                 # Estado global con Zustand (diseñado para implementación)
 │   │   ├── chatStore.ts        # Estado del chat
 │   │   ├── inventoryStore.ts   # Estado de inventario
 │   │   ├── uiStore.ts          # Estado de UI
