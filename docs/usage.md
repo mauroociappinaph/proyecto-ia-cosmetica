@@ -38,3 +38,5 @@ El asistente debería:
 > **Ejemplo:**
 > **Pregunta:** "¿Qué tengo que reponer esta semana?"
 > **Respuesta del asistente:** "Esta semana te conviene reponer 20 unidades del Serum Antioxidante X: vendiste unas 5 por día en la última semana y solo tenés 10 en stock; en menos de 3 días te quedarías sin unidades. Es un producto estratégico con buen margen."
+
+> Este comportamiento forma parte de las especificaciones del sistema en el enfoque Spec-Driven Development (SDD); la implementación del asistente seguirá estas pautas de respuesta.
