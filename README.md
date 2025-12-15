@@ -69,6 +69,34 @@ El asistente permite realizar consultas en lenguaje natural sobre el stock, reci
 
 El sistema se compone de un frontend en **Next.js**, un backend en **Node.js/TypeScript** con un servidor MCP integrado y **Prisma ORM**. La base de datos propuesta es SQLite para desarrollo y PostgreSQL para producción. Esta elección de stack es moderna, robusta y ampliamente reconocida en la industria.
 
+```mermaid
+graph TB
+    A[👤 Usuario] --> B[🎨 Frontend<br/>Next.js + Zustand]
+    B --> C[⚙️ Backend<br/>Node.js + TS]
+
+    C --> D[🤖 Mistral AI<br/>API]
+    C --> E[🗄️ Base de Datos<br/>SQLite/PostgreSQL]
+
+    D --> F[MCP Tools]
+    F --> E
+
+    B --> G[Zustand Stores]
+    G --> H[Chat Store]
+    G --> I[Inventory Store]
+    G --> J[UI Store]
+
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#f1f8e9
+    style G fill:#e8eaf6
+    style H fill:#f1f8e9
+    style I fill:#f1f8e9
+    style J fill:#f1f8e9
+```
+
 > [Explora el diagrama de arquitectura, el flujo de datos y el stack completo en **docs/architecture.md**](./docs/architecture.md) y [**docs/stack.md &raquo;**](./docs/stack.md)
 
 ## 🗄️ Modelo de datos y Lógica de negocio
