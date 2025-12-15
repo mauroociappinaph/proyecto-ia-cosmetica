@@ -22,4 +22,4 @@
 - La IA accede al inventario y ventas a través de tools expuestas por un servidor MCP, lo que permite combinar lenguaje natural con datos estructurados de negocio.
 
 ### 🗄️ Modelo de datos
-- Modelo de datos realista diseñado para el MVP: incluye precio, proveedor, fecha de última reposición, margen básico, etc.
+- Modelo de datos realista diseñado para el MVP (implementación pendiente): incluye precio, proveedor, fecha de última reposición, margen básico, etc.
