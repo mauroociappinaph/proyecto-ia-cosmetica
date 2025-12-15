@@ -1,6 +1,6 @@
 ## 💬 Uso y ejemplos de consultas
 
-Una vez levantado el backend y el frontend:
+Una vez levantado el backend y el frontend (cuando estén implementados):
 
 Abre `http://localhost:3000` en el navegador.
 Verás:
