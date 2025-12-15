@@ -30,4 +30,4 @@ Demostrar la capacidad de:
 
 ---
 
-*Este documento describe el diseño del sistema; la implementación se realizará por fases siguiendo el roadmap técnico.*
+*Este documento describe el diseño del sistema como parte del enfoque Spec-Driven Development (SDD); la implementación se realizará por fases siguiendo el roadmap técnico.*
