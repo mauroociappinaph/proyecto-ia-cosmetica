@@ -65,3 +65,13 @@ En una versión real, el sistema debería integrarse con:
 - Sistema de compras/ERP para ingresos de stock.
 
 Estas integraciones se consideran fuera del alcance del MVP de portfolio.
+
+## 🔐 Consideraciones de seguridad (diseñada)
+
+Aunque este prototipo está orientado a portfolio y no a producción, el diseño contempla:
+
+- **Validación de entradas** en `/api/chat` para evitar inyecciones o payloads malformados.
+- Uso de **Prisma** como ORM para reducir riesgo de SQL injection.
+- Configuración de **CORS** restringido a dominios de confianza en caso de deploy.
+- Manejo seguro de **MISTRAL_API_KEY** vía variables de entorno (`.env`), nunca comprometida en el repositorio.
+- (Futuro) Autenticación básica de usuarios si se evoluciona hacia un sistema multi‑usuario.
