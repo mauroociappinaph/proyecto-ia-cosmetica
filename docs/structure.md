@@ -55,6 +55,7 @@
 │   └── .env.example
 │
 ├── docs/                       # Documentación detallada (nombres orientativos)
+│   ├── README.md                # Mapa de navegación de la documentación
 │   ├── overview.md
 │   ├── architecture.md
 │   ├── features.md
