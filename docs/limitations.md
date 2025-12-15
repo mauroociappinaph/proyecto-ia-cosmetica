@@ -9,7 +9,7 @@ Este prototipo está pensado como MVP de portfolio, por lo que:
 - Depende de que los datos de inventario estén razonablemente actualizados.
 
 Por ahora no hay:
-- Gestión de usuarios/roles avanzada.
-- Multi‑tenant real (múltiples tiendas).
-- Integraciones con ERP / POS.
-- Optimización para volúmenes de datos muy grandes ni para entornos de alta concurrencia (el foco está en la demostración funcional).
+- **Gestión de usuarios/roles avanzada.**
+- **Multi‑tenant real (múltiples tiendas).**
+- **Integraciones con ERP / POS.**
+- **Optimización para volúmenes de datos muy grandes ni para entornos de alta concurrencia** (el foco está en la demostración funcional).
