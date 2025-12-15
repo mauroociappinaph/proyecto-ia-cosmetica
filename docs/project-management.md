@@ -1,6 +1,6 @@
 ## 🏗️ Metodología y Organización del Desarrollo
 
-Este documento describe la metodología que aplico para organizar el desarrollo de este prototipo, centrada en GitHub Issues para asegurar un proceso transparente y profesional, incluso en un proyecto individual.
+Este documento describe la metodología que aplico para organizar el desarrollo de este prototipo, siguiendo principios de **Spec-Driven Development (SDD)** donde la documentación completa precede a la implementación. El proceso se centra en GitHub Issues para asegurar un flujo de trabajo transparente y profesional, incluso en un proyecto individual.
 
 ### 📋 Tareas y Planificación (GitHub Issues)
 

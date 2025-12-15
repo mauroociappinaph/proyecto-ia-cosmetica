@@ -2,6 +2,8 @@
 
 Este archivo sirve como índice central para toda la documentación técnica y de producto del proyecto "Asistente de Inventario con IA". Cada documento se enfoca en un aspecto específico del sistema y describe el diseño previsto del MVP (implementación en desarrollo).
 
+Este proyecto sigue una metodología de **Spec-Driven Development (SDD)**, donde las especificaciones completas y la documentación detallada se crean antes de comenzar la implementación del código.
+
 ### Documentos Principales
 
 -   **[overview.md](./overview.md)**: Describe el problema de negocio, la solución propuesta y los objetivos del proyecto como pieza de portfolio.

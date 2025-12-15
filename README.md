@@ -13,7 +13,7 @@ Permite consultar stock, analizar ventas y recibir recomendaciones automáticas 
 - ✅ **Documentación completa** - Arquitectura, features, instalación, roadmap.
 - 🚧 **Implementación en desarrollo** - Backend, MCP, integración Mistral API, UI.
 
-Este proyecto está pensado como **prototipo de portfolio** para mostrar habilidades de:
+Este proyecto aplica **Spec-Driven Development (SDD)**, con documentación completa y especificaciones detalladas antes de la implementación. Está pensado como **prototipo de portfolio** para mostrar habilidades de:
 - 🧠 IA aplicada a un caso real de negocio.
 - ⚙️ Backend moderno + base de datos + lógica de negocio.
 - 🔗 Orquestación de herramientas vía Model Context Protocol (MCP).
