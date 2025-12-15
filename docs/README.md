@@ -28,6 +28,7 @@ Este proyecto sigue una metodología de **Spec-Driven Development (SDD)**, donde
 -   **[ui.md](./ui.md)**: Presenta el diseño de la interfaz de usuario, incluyendo el chat, el dashboard y la futura gestión de productos (CRUD).
 -   **[usage.md](./usage.md)**: Proporciona ejemplos de consultas en lenguaje natural que el usuario puede hacer al asistente.
 -   **[installation.md](./installation.md)**: Contiene las instrucciones para la instalación y configuración local del proyecto.
+-   **[testing.md](./testing.md)**: Describe la estrategia de pruebas unitarias, integración y E2E planificada.
 
 ### Gestión del Proyecto
 

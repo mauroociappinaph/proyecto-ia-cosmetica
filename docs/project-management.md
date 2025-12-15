@@ -53,7 +53,7 @@ Este es un proyecto de portfolio personal, pero cualquier sugerencia, reporte de
 -   **Versionado**: Git.
 -   **Gestión de Tareas**: GitHub Issues, Labels & Milestones.
 -   **Calidad de Código**: ESLint/Prettier y TypeScript (planeado).
--   **Testing**: Pruebas unitarias y de integración (planeado).
+-   **Testing**: Pruebas unitarias y de integración (planeado). Consulta la [estrategia completa en **docs/testing.md**](../testing.md).
 -   **Automatización de calidad (diseñada)**: Hooks pre-commit con Husky y workflow de GitHub Actions para validar documentación y cambios.
 
 ---
