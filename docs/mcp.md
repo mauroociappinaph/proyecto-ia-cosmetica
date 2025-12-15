@@ -1,0 +1,45 @@
+## 🤖 IA y orquestación con MCP
+
+### 7.1 Tools MCP disponibles
+
+Implementadas en el servidor MCP:
+
+- `getProductStock(productName | sku)`[TRAILING_SPACE]
+  Devuelve: stock actual, ventas recientes, umbral, info básica del producto
+
+- `getLowStockReport()`[TRAILING_SPACE]
+  Devuelve una lista de productos por debajo de `threshold` o con riesgo de quiebre según proyección simple
+
+- `getSalesTrends(productName | sku)`[TRAILING_SPACE]
+  Devuelve ventas 7/30 días y tendencia básica (sube/baja/estable)
+
+- `recommendReorder(productName | sku)`[TRAILING_SPACE]
+  Calcula `cantidad_sugerida` a partir de ventas + stock + umbral
+
+- `searchProducts(keyword)`[TRAILING_SPACE]
+  Busca productos por nombre, marca o categoría
+
+- `getOverstockReport()`[TRAILING_SPACE]
+  Detecta productos en potencial sobrestock/estancados
+
+- `getStrategicProductsStatus()`[TRAILING_SPACE]
+  Lista productos con `is_strategic = true` y su nivel de riesgo
+
+> En esta versión del proyecto, todas las tools MCP son de solo lectura sobre la base de datos; el asistente no ejecuta cambios directos en inventario ni genera órdenes reales.
+
+### 7.2 Asistente de IA (agente principal)
+
+**Rol**: Asistente de inventario para tiendas de cosmética.
+
+El asistente utiliza estas tools MCP de forma automática según la intención del usuario (por ejemplo, usa `getLowStockReport` cuando el usuario pregunta: "¿Qué productos están por agotarse?").
+
+**Responsabilidades**:
+- Entender la intención del usuario
+- Elegir y llamar tools MCP adecuadas
+- Integrar los resultados con las reglas de negocio
+- Responder en lenguaje natural, explicando el razonamiento
+
+Por simplicidad, esta versión utiliza un solo agente (asistente principal).
+En una versión futura podría separarse en:
+- Agente de recomendación (solo lectura)
+- Módulo de ejecución (validación + escritura segura)
