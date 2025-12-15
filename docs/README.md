@@ -36,3 +36,5 @@ Este proyecto sigue una metodología de **Spec-Driven Development (SDD)**, donde
 ---
 
 Para una vista rápida del proyecto orientada a recruiters, consulta el [`README.md` en la raíz del repositorio](../README.md).
+
+Esta metodología complementa el enfoque Spec-Driven Development (SDD): primero se definen las especificaciones y el plan de trabajo, luego se ejecuta la implementación de forma controlada.
