@@ -55,3 +55,13 @@
 - Si una tool MCP devuelve error (por ejemplo, la base de datos no responde):
   - El asistente informará el fallo ("No pude acceder al inventario en este momento…") y registrará el error en los logs.
 - Todas las respuestas del asistente deben ser robustas ante errores de red o datos faltantes.
+
+### Integración con sistemas de origen de datos (futuro)
+
+Actualmente se asume que los datos de ventas y stock están cargados y actualizados en la base de datos (por ejemplo, vía scripts de seed o procesos manuales).
+
+En una versión real, el sistema debería integrarse con:
+- Punto de Venta (POS) para ventas diarias.
+- Sistema de compras/ERP para ingresos de stock.
+
+Estas integraciones se consideran fuera del alcance del MVP de portfolio.
