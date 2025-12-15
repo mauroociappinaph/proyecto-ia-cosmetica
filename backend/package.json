@@ -11,6 +11,9 @@
   "keywords": ["typescript", "node", "mcp", "prisma"],
   "author": "",
   "license": "ISC",
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "dependencies": {
     "@prisma/client": "^6.0.0",
     "@types/node": "^20.0.0",
