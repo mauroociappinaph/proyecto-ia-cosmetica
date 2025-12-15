@@ -72,12 +72,12 @@ El sistema se compone de un frontend en **Next.js**, un backend en **Node.js/Typ
 ```mermaid
 graph TB
     A[👤 Usuario] --> B[🎨 Frontend<br/>Next.js + Zustand]
-    B --> C[⚙️ Backend<br/>Node.js + TS]
+    B --> C[⚙️ Backend<br/>Node.js + TS + Prisma + MCP]
 
     C --> D[🤖 Mistral AI<br/>API]
     C --> E[🗄️ Base de Datos<br/>SQLite/PostgreSQL]
 
-    D --> F[MCP Tools]
+    C --> F[MCP Tools]
     F --> E
 
     B --> G[Zustand Stores]
