@@ -1,6 +1,6 @@
 import express from 'express';
 import prisma from './prismaClient';
-import { getProductStock, getLowStockReport, getOverstockReport } from './tools';
+import { getProductStock, getLowStockReport, getOverstockReport } from './mcp/tools/productTools';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
