@@ -36,3 +36,7 @@
 - 🔗 **Uso de MCP** para mostrar orquestación de tools por IA (tendencia actual)
 - 💰 **API de Mistral AI** (requiere API key; sujeto a límites/costos según plan)
 - 🚀 **Next.js** → facilita una UI clara para perfiles no técnicos
+
+---
+
+Este stack forma parte de las especificaciones técnicas definidas bajo el enfoque Spec-Driven Development (SDD); la implementación seguirá esta configuración en el MVP.
