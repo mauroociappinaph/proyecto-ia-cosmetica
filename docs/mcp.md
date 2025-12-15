@@ -27,6 +27,8 @@ Implementadas en el servidor MCP:
 
 > En esta versión del proyecto, todas las tools MCP son de solo lectura sobre la base de datos; el asistente no ejecuta cambios directos en inventario ni genera órdenes reales.
 
+> Estas tools forman parte de las especificaciones del sistema (enfoque Spec-Driven Development / doc-first) y se implementarán en el servidor MCP durante el desarrollo del MVP.
+
 ### 7.2 Asistente de IA (agente principal)
 
 **Rol**: Asistente de inventario para tiendas de cosmética.
