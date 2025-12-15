@@ -54,6 +54,10 @@ npx prisma migrate dev
 npx prisma db seed   # si tienes script de seed configurado
 ```
 
+### Datos de ejemplo (seed)
+
+El script `npx prisma db seed` cargará datos ficticios de cosmética (serums, cremas, maquillajes, etc.) con campos como nombre, marca, categoría, stock, ventas recientes y umbrales. Esto permite probar el asistente sin necesidad de cargar productos manualmente.
+
 **Ejecutar backend (cuando esté implementado):**
 ```bash
 npm run dev
