@@ -85,16 +85,16 @@ graph TB
     G --> I[Inventory Store]
     G --> J[UI Store]
 
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f1f8e9
-    style G fill:#e8eaf6
-    style H fill:#f1f8e9
-    style I fill:#f1f8e9
-    style J fill:#f1f8e9
+    style A fill:#e1f5fe,color:black
+    style B fill:#f3e5f5,color:black
+    style C fill:#e8f5e8,color:black
+    style D fill:#fff3e0,color:black
+    style E fill:#fce4ec,color:black
+    style F fill:#f1f8e9,color:black
+    style G fill:#e8eaf6,color:black
+    style H fill:#f1f8e9,color:black
+    style I fill:#f1f8e9,color:black
+    style J fill:#f1f8e9,color:black
 ```
 
 > [Explora el diagrama de arquitectura, el flujo de datos y el stack completo en **docs/architecture.md**](./docs/architecture.md) y [**docs/stack.md &raquo;**](./docs/stack.md)
