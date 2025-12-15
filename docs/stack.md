@@ -14,12 +14,12 @@
 
 ### 🎨 Frontend
 - **Framework**: Next.js (React)
-- **Estado global**: Zustand (librería ligera para manejo de estado - planeada para implementación)
+- **Estado global**: Zustand (librería ligera para manejo de estado, planeada para implementación)
 - **Estilos**: TailwindCSS / CSS Modules (a elección)
 - **Patrones de arquitectura** (diseñados para implementación):
-  - **SRP** (Single Responsibility Principle): Cada componente/función tendrá una sola responsabilidad
-  - **DRY** (Don't Repeat Yourself): Reutilización de lógica mediante custom hooks y utilities
-  - **Barrel exports**: Archivos `index.ts` para exportar módulos relacionados
+  - **SRP** (Single Responsibility Principle): Cada componente/función tendrá una sola responsabilidad.
+  - **DRY** (Don't Repeat Yourself): Reutilización de lógica mediante custom hooks and utilities.
+  - **Barrel exports**: Archivos `index.ts` para exportar módulos relacionados.
 
 **Diseño de Stores Zustand (implementación pendiente):**
 - `useChatStore`: Diseñado para gestionar estado del chat (mensajes, loading, historial)
