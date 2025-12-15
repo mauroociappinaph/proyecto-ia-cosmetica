@@ -49,7 +49,9 @@ Si stock_actual > (promedio_diario_30d * 45)
 
 (45 días ≈ horizonte de stock máximo deseado)
 
-Donde "sales_last_30 es baja" puede definirse como ventas_last_30 = 0 (productos totalmente parados) o ventas_last_30 < umbral mínimo para detectar productos con baja rotación.
+Donde `sales_last_30` "es baja" puede definirse como:
+- `sales_last_30 = 0` (productos totalmente parados), o
+- `sales_last_30 < umbral_mínimo_ventas_30d` definido por la tienda.
 
 La IA puede sugerir:
 - Descuentos
