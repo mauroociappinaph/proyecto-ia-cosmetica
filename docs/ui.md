@@ -11,8 +11,8 @@ El diseño contempla Zustand para manejar el estado global de manera eficiente:
 **Chat Store (diseñado para implementación):**
 - `messages`: Array de mensajes (usuario/IA)
 - `isTyping`: Estado de carga durante respuestas
-- `chatHistory`: Historial persistente en localStorage
-- `connectionStatus`: Estado de conexión con backend
+- `chatHistory`: Historial persistente en `localStorage` (diseñado)
+- `connectionStatus`: Estado de conexión con backend (diseñado para manejar errores de red)
 
 **Inventory Store (diseñado para implementación):**
 - `products`: Lista completa de productos
@@ -67,10 +67,10 @@ En el estado actual, los productos se cargan de forma técnica mediante scripts 
 - **Importar/exportar datos**: Funcionalidad opcional para importar productos desde CSV/Excel o exportar el catálogo completo
 
 **Diseño de UX:**
-- Interfaz separada del dashboard de consulta (accesible desde menú de administración)
-- Formularios validados con mensajes de error claros
-- Confirmaciones para acciones destructivas (eliminar producto)
-- Diseño responsive para uso en tablet/dispositivo móvil
-- Navegación intuitiva con breadcrumbs y botones de acción contextuales
+- Interfaz separada del dashboard de consulta (accesible desde menú de administración).
+- Formularios validados con mensajes de error claros.
+- Confirmaciones para acciones destructivas (eliminar producto).
+- Diseño responsive para uso en tablet/dispositivo móvil.
+- Navegación intuitiva con breadcrumbs y botones de acción contextuales.
 
 Este módulo transformará el sistema de un asistente de consulta en una **solución completa de gestión de inventario**, permitiendo al usuario final tener control total sobre su catálogo de productos.
