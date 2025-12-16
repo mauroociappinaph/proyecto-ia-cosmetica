@@ -1,34 +1,31 @@
-const MISTRAL_API_KEY = process.env.MISTRAL_API_KEY;
-const MISTRAL_MODEL = process.env.MISTRAL_MODEL ?? "mistral-medium-latest";
+import OpenAI from 'openai';
 
-if (!MISTRAL_API_KEY) {
-  throw new Error("MISTRAL_API_KEY is not set");
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL ?? "mistralai/devstral-2512:free";
+
+if (!OPENROUTER_API_KEY) {
+  throw new Error("OPENROUTER_API_KEY is not set");
 }
 
+const client = new OpenAI({
+  baseURL: "https://openrouter.ai/api/v1",
+  apiKey: OPENROUTER_API_KEY,
+});
+
 export async function callMistral(prompt: string): Promise<string> {
-  // Usar endpoint de chat completions de Mistral AI (similar a OpenAI)
-  const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${MISTRAL_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: MISTRAL_MODEL,
+  try {
+    const response = await client.chat.completions.create({
+      model: OPENROUTER_MODEL,
       messages: [
         { role: "system", content: "Eres un asistente de inventario para una tienda de cosméticos. Responde en español de forma clara y útil." },
         { role: "user", content: prompt },
       ],
-    }),
-  });
+    });
 
-  if (!response.ok) {
-    const text = await response.text();
-    console.error("Error from Mistral API:", response.status, text);
-    throw new Error(`Mistral API error: ${response.status}`);
+    const content = response.choices?.[0]?.message?.content ?? "";
+    return content;
+  } catch (error: any) {
+    console.error("Error from OpenRouter API:", error);
+    throw new Error(`OpenRouter API error: ${error.message}`);
   }
-
-  const data: any = await response.json();
-  const content = data.choices?.[0]?.message?.content ?? "";
-  return content;
 }
