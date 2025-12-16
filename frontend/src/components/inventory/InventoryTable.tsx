@@ -1,13 +1,23 @@
 
-import React from 'react';
+'use client';
 
-const products = [
-  { id: 1, name: 'Serum Facial Hidratante', sku: 'SFH-001', brand: 'Cosmetica Natural', stock: 42, status: 'in-stock' },
-  { id: 2, name: 'Crema Contorno de Ojos', sku: 'CCO-002', brand: 'Bella Piel', stock: 15, status: 'in-stock' },
-  { id: 3, name: 'Mascarilla Facial de Arcilla', sku: 'MFA-003', brand: 'Tierra Pura', stock: 0, status: 'out-of-stock' },
-  { id: 4, name: 'Protector Solar SPF 50', sku: 'PSS-004', brand: 'Sol Radiante', stock: 5, status: 'low-stock' },
-  { id: 5, name: 'Tónico Facial Refrescante', sku: 'TFR-005', brand: 'Agua Viva', stock: 30, status: 'in-stock' },
-];
+import React, { useState, useEffect } from 'react';
+
+interface Product {
+  id: number;
+  name: string;
+  sku: string;
+  brand: string;
+  stock: number;
+  threshold: number;
+  category: string;
+}
+
+const getStatus = (stock: number, threshold: number) => {
+  if (stock === 0) return 'out-of-stock';
+  if (stock <= threshold) return 'low-stock';
+  return 'in-stock';
+};
 
 const getStatusClasses = (status: string) => {
   switch (status) {
@@ -23,6 +33,45 @@ const getStatusClasses = (status: string) => {
 };
 
 const InventoryTable: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/debug/products`);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+        const data: Product[] = await response.json();
+        setProducts(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Unknown error');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="bg-white p-6 rounded-lg shadow-md h-full flex items-center justify-center">
+        <p className="text-gray-500">Cargando productos...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="bg-white p-6 rounded-lg shadow-md h-full flex items-center justify-center">
+        <p className="text-red-500">Error al cargar productos: {error}</p>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-md h-full">
       <div className="flex justify-between items-center mb-4">
@@ -53,19 +102,22 @@ const InventoryTable: React.FC = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {products.map((product) => (
-              <tr key={product.id}>
-                <td className="py-4 px-4 whitespace-nowrap text-sm font-medium text-gray-900">{product.name}</td>
-                <td className="py-4 px-4 whitespace-nowrap text-sm text-gray-500">{product.sku}</td>
-                <td className="py-4 px-4 whitespace-nowrap text-sm text-gray-500">{product.brand}</td>
-                <td className="py-4 px-4 whitespace-nowrap text-sm text-gray-500">{product.stock}</td>
-                <td className="py-4 px-4 whitespace-nowrap">
-                  <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusClasses(product.status)}`}>
-                    {product.status === 'in-stock' ? 'En Stock' : product.status === 'low-stock' ? 'Stock Bajo' : 'Agotado'}
-                  </span>
-                </td>
-              </tr>
-            ))}
+            {products.map((product) => {
+              const status = getStatus(product.stock, product.threshold);
+              return (
+                <tr key={product.id}>
+                  <td className="py-4 px-4 whitespace-nowrap text-sm font-medium text-gray-900">{product.name}</td>
+                  <td className="py-4 px-4 whitespace-nowrap text-sm text-gray-500">{product.sku}</td>
+                  <td className="py-4 px-4 whitespace-nowrap text-sm text-gray-500">{product.brand}</td>
+                  <td className="py-4 px-4 whitespace-nowrap text-sm text-gray-500">{product.stock}</td>
+                  <td className="py-4 px-4 whitespace-nowrap">
+                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusClasses(status)}`}>
+                      {status === 'in-stock' ? 'En Stock' : status === 'low-stock' ? 'Stock Bajo' : 'Agotado'}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
