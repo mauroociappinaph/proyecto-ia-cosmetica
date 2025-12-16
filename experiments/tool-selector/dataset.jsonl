@@ -1,0 +1,92 @@
+{"text": "¿Qué productos están por agotarse?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos con stock bajo?", "label": "getLowStockReport"}
+{"text": "¿Qué necesito reponer pronto?", "label": "getLowStockReport"}
+{"text": "¿Qué artículos están en stock bajo?", "label": "getLowStockReport"}
+{"text": "¿Qué productos requieren reposición?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos que se están agotando?", "label": "getLowStockReport"}
+{"text": "¿Qué tengo que pedir más?", "label": "getLowStockReport"}
+{"text": "¿Qué productos tienen menos de 10 unidades?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos críticos por stock?", "label": "getLowStockReport"}
+{"text": "¿Qué necesito comprar pronto?", "label": "getLowStockReport"}
+{"text": "¿Qué productos están en riesgo de agotarse?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos con inventario bajo?", "label": "getLowStockReport"}
+{"text": "¿Qué artículos requieren atención inmediata?", "label": "getLowStockReport"}
+{"text": "¿Qué productos están cerca de cero?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos que venden rápido?", "label": "getLowStockReport"}
+{"text": "¿Qué necesito reabastecer?", "label": "getLowStockReport"}
+{"text": "¿Qué productos están por debajo del umbral?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos con stock crítico?", "label": "getLowStockReport"}
+{"text": "¿Qué artículos están en stock mínimo?", "label": "getLowStockReport"}
+{"text": "¿Qué productos requieren pedido urgente?", "label": "getLowStockReport"}
+{"text": "¿Qué productos tienen stock bajo?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos que están escasos?", "label": "getLowStockReport"}
+{"text": "¿Qué artículos están en alerta de stock?", "label": "getLowStockReport"}
+{"text": "¿Qué productos requieren reposición inmediata?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos con inventario limitado?", "label": "getLowStockReport"}
+{"text": "¿Qué necesito surtir pronto?", "label": "getLowStockReport"}
+{"text": "¿Qué productos están cerca de agotarse?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos que necesitan más stock?", "label": "getLowStockReport"}
+{"text": "¿Qué productos tienen stock insuficiente?", "label": "getLowStockReport"}
+{"text": "¿Cuáles son los productos en riesgo de agotarse?", "label": "getLowStockReport"}
+
+{"text": "Mostrame el sobrestock que tengo.", "label": "getOverstockReport"}
+{"text": "¿Qué productos tengo en exceso?", "label": "getOverstockReport"}
+{"text": "¿Cuáles son los artículos con stock excesivo?", "label": "getOverstockReport"}
+{"text": "¿Qué productos tienen un inventario muy alto?", "label": "getOverstockReport"}
+{"text": "¿Qué me está ocupando mucho espacio en el almacén?", "label": "getOverstockReport"}
+{"text": "¿Cuáles son los productos con más de 1000 unidades?", "label": "getOverstockReport"}
+{"text": "¿Qué productos tienen exceso de inventario?", "label": "getOverstockReport"}
+{"text": "¿Cuáles son los productos con sobrestock?", "label": "getOverstockReport"}
+{"text": "¿Qué artículos no se están vendiendo y tengo muchos?", "label": "getOverstockReport"}
+{"text": "¿Qué productos tienen un inventario superior al necesario?", "label": "getOverstockReport"}
+{"text": "¿Qué necesito mover del almacén?", "label": "getOverstockReport"}
+{"text": "¿Cuáles son los productos con inventario sobrante?", "label": "getOverstockReport"}
+{"text": "¿Qué artículos tengo en demasía?", "label": "getOverstockReport"}
+{"text": "¿Qué productos tienen más stock del deseado?", "label": "getOverstockReport"}
+{"text": "¿Qué me está generando costos de almacenamiento innecesarios?", "label": "getOverstockReport"}
+{"text": "¿Cuáles son los productos con inventario excesivo?", "label": "getOverstockReport"}
+{"text": "¿Qué artículos tengo en gran cantidad?", "label": "getOverstockReport"}
+{"text": "¿Qué productos están acumulados?", "label": "getOverstockReport"}
+{"text": "¿Cuáles son los productos que no rotan y tengo muchos?", "label": "getOverstockReport"}
+{"text": "¿Qué productos tienen más stock del que necesito?", "label": "getOverstockReport"}
+{"text": "¿Qué productos tienen stock en exceso?", "label": "getOverstockReport"}
+{"text": "¿Cuáles son los productos con excedente de inventario?", "label": "getOverstockReport"}
+{"text": "¿Qué artículos tengo demasiados?", "label": "getOverstockReport"}
+{"text": "¿Qué productos están sobreabastecidos?", "label": "getOverstockReport"}
+{"text": "¿Cuáles son los productos con mayor cantidad?", "label": "getOverstockReport"}
+{"text": "¿Qué productos no se venden y hay muchos?", "label": "getOverstockReport"}
+{"text": "¿Qué necesito vender rápidamente?", "label": "getOverstockReport"}
+{"text": "¿Cuáles son los productos con mayor inventario?", "label": "getOverstockReport"}
+{"text": "¿Qué artículos tengo en abundancia?", "label": "getOverstockReport"}
+{"text": "¿Qué productos están con mucho stock?", "label": "getOverstockReport"}
+
+{"text": "¿Cuántas unidades quedan del serum facial hidratante?", "label": "getProductStock"}
+{"text": "¿Cuál es el stock actual del protector solar SPF 50?", "label": "getProductStock"}
+{"text": "¿Tienes información sobre la cantidad de crema contorno de ojos?", "label": "getProductStock"}
+{"text": "¿Podrías decirme el inventario de mascarilla purificante?", "label": "getProductStock"}
+{"text": "¿Qué cantidad de tónico facial refrescante hay disponible?", "label": "getProductStock"}
+{"text": "¿Cuál es el número de unidades de labial mate rojo pasión?", "label": "getProductStock"}
+{"text": "¿Stock de base de maquillaje tono medio?", "label": "getProductStock"}
+{"text": "¿Cuántos delineadores líquidos negros tenemos?", "label": "getProductStock"}
+{"text": "¿Qué stock hay del desmaquillante bifásico?", "label": "getProductStock"}
+{"text": "¿Podrías consultar el inventario de crema hidratante?", "label": "getProductStock"}
+{"text": "¿Cuántas sombras de ojos individuales quedan?", "label": "getProductStock"}
+{"text": "¿Cuál es el inventario actual de exfoliante corporal?", "label": "getProductStock"}
+{"text": "¿Qué cantidad de spray fijador de maquillaje hay?", "label": "getProductStock"}
+{"text": "¿Stock de aceite de argán puro?", "label": "getProductStock"}
+{"text": "¿Cuántas toallitas desmaquillantes quedan?", "label": "getProductStock"}
+{"text": "¿Tienes el stock de primer iluminador?", "label": "getProductStock"}
+{"text": "¿Inventario de serum vitamina C?", "label": "getProductStock"}
+{"text": "¿Cantidad de agua micelar?", "label": "getProductStock"}
+{"text": "¿Cuál es el stock de crema para manos?", "label": "getProductStock"}
+{"text": "¿Stock de pincel para base?", "label": "getProductStock"}
+{"text": "¿Cuántas unidades hay del producto con SKU SFH-001?", "label": "getProductStock"}
+{"text": "¿Cuál es el stock del serum facial revitalizante?", "label": "getProductStock"}
+{"text": "¿Cantidad de la crema de noche regeneradora?", "label": "getProductStock"}
+{"text": "¿Dime el stock de la loción corporal hidratante.", "label": "getProductStock"}
+{"text": "¿Cuántas unidades hay del set de brochas de maquillaje?", "label": "getProductStock"}
+{"text": "¿Stock del bálsamo labial con color?", "label": "getProductStock"}
+{"text": "¿Qué cantidad del champú sólido nutritivo?", "label": "getProductStock"}
+{"text": "¿Inventario del acondicionador sin enjuague?", "label": "getProductStock"}
+{"text": "¿Stock de la mascarilla capilar reparadora?", "label": "getProductStock"}
+{"text": "¿Cuántos geles de ducha relajantes tenemos?", "label": "getProductStock"}
