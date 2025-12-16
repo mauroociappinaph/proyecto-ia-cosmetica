@@ -8,6 +8,7 @@ Este proyecto sigue una metodología de **Spec-Driven Development (SDD)**, donde
 
 -   **[overview.md](./overview.md)**: Describe el problema de negocio, la solución propuesta y los objetivos del proyecto como pieza de portfolio.
 -   **[features.md](./features.md)**: Detalla las características principales y los casos de uso que el asistente soporta.
+-   **[user-stories.md](./user-stories.md)**: Traduce los casos de uso a historias de usuario formales.
 -   **[roadmap.md](./roadmap.md)**: Presenta la visión a futuro y las posibles evoluciones del prototipo hacia una solución más avanzada.
 -   **[limitations.md](./limitations.md)**: Enumera las limitaciones actuales del prototipo de forma transparente.
 
@@ -28,6 +29,7 @@ Este proyecto sigue una metodología de **Spec-Driven Development (SDD)**, donde
 -   **[ui.md](./ui.md)**: Presenta el diseño de la interfaz de usuario, incluyendo el chat, el dashboard y la futura gestión de productos (CRUD).
 -   **[usage.md](./usage.md)**: Proporciona ejemplos de consultas en lenguaje natural que el usuario puede hacer al asistente.
 -   **[installation.md](./installation.md)**: Contiene las instrucciones para la instalación y configuración local del proyecto.
+-   **[testing.md](./testing.md)**: Describe la estrategia de pruebas unitarias, integración y E2E planificada.
 
 ### Gestión del Proyecto
 
@@ -36,3 +38,5 @@ Este proyecto sigue una metodología de **Spec-Driven Development (SDD)**, donde
 ---
 
 Para una vista rápida del proyecto orientada a recruiters, consulta el [`README.md` en la raíz del repositorio](../README.md).
+
+Esta metodología complementa el enfoque Spec-Driven Development (SDD): primero se definen las especificaciones y el plan de trabajo, luego se ejecuta la implementación de forma controlada.

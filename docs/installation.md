@@ -54,12 +54,24 @@ npx prisma migrate dev
 npx prisma db seed   # si tienes script de seed configurado
 ```
 
+### Datos de ejemplo (seed)
+
+El script `npx prisma db seed` cargará datos ficticios de cosmética (serums, cremas, maquillajes, etc.) con campos como nombre, marca, categoría, stock, ventas recientes y umbrales. Esto permite probar el asistente sin necesidad de cargar productos manualmente.
+
 **Ejecutar backend (cuando esté implementado):**
 ```bash
 npm run dev
 ```
 
 Por defecto debería levantar en `http://localhost:4000`.
+
+### Exposición del backend (MVP de portfolio)
+
+En el MVP de portfolio, el endpoint `/api/chat` está pensado como público (sin autenticación propia) para simplificar las pruebas y las demos.
+
+En una versión más avanzada, se podría:
+- Añadir autenticación por token para clientes front autorizados.
+- Proteger ciertos endpoints de administración con login.
 
 ### 9.5 Frontend (Next.js)
 

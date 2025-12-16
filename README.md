@@ -13,7 +13,7 @@ Permite consultar stock, analizar ventas y recibir recomendaciones automáticas 
 - ✅ **Documentación completa** - Arquitectura, features, instalación, roadmap.
 - 🚧 **Implementación en desarrollo** - Backend, MCP, integración Mistral API, UI.
 
-Este proyecto aplica **Spec-Driven Development (SDD)**, con documentación completa y especificaciones detalladas antes de la implementación. Está pensado como **prototipo de portfolio** para mostrar habilidades de:
+Este proyecto aplica **Spec-Driven Development (SDD)**, es decir, un enfoque doc‑first donde se redactan las especificaciones completas antes de la implementación. Está pensado como **prototipo de portfolio** para mostrar habilidades de:
 - 🧠 IA aplicada a un caso real de negocio.
 - ⚙️ Backend moderno + base de datos + lógica de negocio.
 - 🔗 Orquestación de herramientas vía Model Context Protocol (MCP).
@@ -65,6 +65,16 @@ El asistente permite realizar consultas en lenguaje natural sobre el stock, reci
 
 > [Consulta todas las características y casos de uso en **docs/features.md &raquo;**](./docs/features.md)
 
+## 🧪 Demo pública de IA avanzada
+
+Puedes probar el clasificador de tools MCP (fine-tuneado por mí) en este Hugging Face Space público:
+
+[https://huggingface.co/spaces/marioxasas/tool-classifier-mcp-demo](https://huggingface.co/spaces/marioxasas/tool-classifier-mcp-demo)
+
+Ejemplo:
+Consulta: "¿Qué productos están por agotarse?"
+Tool sugerida: `getLowStockReport`
+
 ## 🏗️ Arquitectura y Stack
 
 El sistema se compone de un frontend en **Next.js**, un backend en **Node.js/TypeScript** con un servidor MCP integrado y **Prisma ORM**. La base de datos propuesta es SQLite para desarrollo y PostgreSQL para producción. Esta elección de stack es moderna, robusta y ampliamente reconocida en la industria.
@@ -72,12 +82,12 @@ El sistema se compone de un frontend en **Next.js**, un backend en **Node.js/Typ
 ```mermaid
 graph TB
     A[👤 Usuario] --> B[🎨 Frontend<br/>Next.js + Zustand]
-    B --> C[⚙️ Backend<br/>Node.js + TS]
+    B --> C[⚙️ Backend<br/>Node.js + TS + Prisma + MCP]
 
     C --> D[🤖 Mistral AI<br/>API]
     C --> E[🗄️ Base de Datos<br/>SQLite/PostgreSQL]
 
-    D --> F[MCP Tools]
+    C --> F[MCP Tools]
     F --> E
 
     B --> G[Zustand Stores]

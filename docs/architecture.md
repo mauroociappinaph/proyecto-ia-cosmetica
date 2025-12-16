@@ -47,3 +47,31 @@
 7. 🔄 **Frontend** actualiza:
    - Chat
    - Dashboard (resaltando productos críticos)
+
+### Manejo de errores y fallbacks (diseñado)
+
+- Si el modelo de IA no entiende la pregunta o no sugiere una tool válida:
+  - El backend devolverá un mensaje genérico ("No entendí tu consulta, ¿podés reformularla…?") y no ejecutará ninguna tool.
+- Si una tool MCP devuelve error (por ejemplo, la base de datos no responde):
+  - El asistente informará el fallo ("No pude acceder al inventario en este momento…") y registrará el error en los logs.
+- Todas las respuestas del asistente deben ser robustas ante errores de red o datos faltantes.
+
+### Integración con sistemas de origen de datos (futuro)
+
+Actualmente se asume que los datos de ventas y stock están cargados y actualizados en la base de datos (por ejemplo, vía scripts de seed o procesos manuales).
+
+En una versión real, el sistema debería integrarse con:
+- Punto de Venta (POS) para ventas diarias.
+- Sistema de compras/ERP para ingresos de stock.
+
+Estas integraciones se consideran fuera del alcance del MVP de portfolio.
+
+## 🔐 Consideraciones de seguridad (diseñada)
+
+Aunque este prototipo está orientado a portfolio y no a producción, el diseño contempla:
+
+- **Validación de entradas** en `/api/chat` para evitar inyecciones o payloads malformados.
+- Uso de **Prisma** como ORM para reducir riesgo de SQL injection.
+- Configuración de **CORS** restringido a dominios de confianza en caso de deploy.
+- Manejo seguro de **MISTRAL_API_KEY** vía variables de entorno (`.env`), nunca comprometida en el repositorio.
+- (Futuro) Autenticación básica de usuarios si se evoluciona hacia un sistema multi‑usuario.

@@ -55,6 +55,7 @@
 │   └── .env.example
 │
 ├── docs/                       # Documentación detallada (nombres orientativos)
+│   ├── README.md                # Mapa de navegación de la documentación
 │   ├── overview.md
 │   ├── architecture.md
 │   ├── features.md
@@ -68,7 +69,8 @@
 │   ├── limitations.md
 │   ├── roadmap.md
 │   ├── project-management.md    # Gestión del proyecto y GitHub Issues
-│   └── structure.md
+│   ├── structure.md
+│   └── testing.md               # Estrategia de testing diseñada
 │
 ├── README.md
 ├── LICENSE
