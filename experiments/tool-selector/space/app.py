@@ -6,7 +6,7 @@ Demo para clasificar consultas de usuario en las herramientas disponibles:
 - getOverstockReport
 - getProductStock
 
-Modelo: DistilBERT fine-tuneado en dataset sintético.
+Modelo: DistilBERT fine-tuneado en dataset sintético de 165 ejemplos.
 """
 
 import gradio as gr
@@ -34,6 +34,9 @@ def classify_query(query):
     label = result['label']
     confidence = result['score']
 
+    # Debug: mostrar el label predicho
+    print(f"Debug - Query: '{query}' -> Predicted label: {label} (confidence: {confidence:.4f})")
+
     description = LABEL_DESCRIPTIONS.get(label, "Tool desconocida")
 
     return f"**Tool sugerida:** {description}\n\n**Confianza:** {confidence:.2f}"
@@ -46,9 +49,9 @@ with gr.Blocks(title="Clasificador de Tools MCP", theme=gr.themes.Soft()) as dem
     en las herramientas disponibles del asistente IA.
 
     **Ejemplos de consultas:**
-    - "¿Qué productos están por agotarse?"
-    - "¿Tengo productos con sobrestock?"
-    - "¿Cuántas unidades quedan del serum facial?"
+    - "¿Qué artículos se están acabando?" (getLowStockReport)
+    - "¿Tengo productos en exceso?" (getOverstockReport)
+    - "¿Cuántas unidades hay del serum facial?" (getProductStock)
     """)
 
     with gr.Row():
@@ -71,9 +74,9 @@ with gr.Blocks(title="Clasificador de Tools MCP", theme=gr.themes.Soft()) as dem
 
     gr.Markdown("""
     ---
-    **Modelo:** DistilBERT fine-tuneado en dataset sintético de 90 ejemplos.
+    **Modelo:** DistilBERT fine-tuneado en dataset sintético de 165 ejemplos.
 
-    **Accuracy en test:** ~67%
+    **Accuracy en test:** ~76%
 
     **Proyecto:** Asistente de Inventario con IA (Cosméticos)
     """)
